@@ -942,15 +942,27 @@
     <div id="snackbar" style="display: none;"></div>
 <script>
 window.addEventListener('load', () => {
-    if (!localStorage.getItem('map_restored_v3')) {
+    if (!localStorage.getItem('map_restored_v4')) {
         fetch('./default_map.json')
             .then(r => r.json())
             .then(data => {
                 const mm = data.mindmap || data;
                 if (mm && mm['mm-node']) {
-                    localStorage.setItem('json-mindmap-content', JSON.stringify(mm));
-                    localStorage.setItem('map_restored_v3', 'true');
-                    window.location.reload();
+                    const mmStr = JSON.stringify(mm);
+                    // Save to json-mindmap-content for the renderer
+                    localStorage.setItem('json-mindmap-content', mmStr);
+                    // Save to mindmap-history for the sidebar list
+                    const history = JSON.parse(localStorage.getItem('mindmap-history') || '[]');
+                    const mapId = Date.now();
+                    history.push({
+                        mindmap: mmStr,
+                        timestamp: new Date().toISOString(),
+                        id: mapId
+                    });
+                    localStorage.setItem('mindmap-history', JSON.stringify(history));
+                    localStorage.setItem('map_restored_v4', 'true');
+                    // Navigate to the map
+                    window.location.href = window.location.pathname + '?id=' + mapId;
                 }
             });
     }
