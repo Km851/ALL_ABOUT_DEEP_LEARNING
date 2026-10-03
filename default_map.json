@@ -19,11 +19,13 @@
                     {
                       "content": "import numpy as np",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_5"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_4"
                 },
                 {
                   "content": "Defining Array",
@@ -31,11 +33,13 @@
                     {
                       "content": "#Defining a 1-D array\na=np.array([1,2,3])\n\n#Defining a 2-D array\nb=np.array([[9,0,8,7,0],[0,2,5,4,5]])\n\n#defining a 3-D array\nc=np.array([[[1,2],[3,4]],[[5,6],[7,8]]])",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_7"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_6"
                 },
                 {
                   "content": "Shape of Array",
@@ -43,11 +47,13 @@
                     {
                       "content": "print(a.shape)\nprint(b.shape)",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_9"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_8"
                 },
                 {
                   "content": "Dimentions of Array",
@@ -55,11 +61,13 @@
                     {
                       "content": "print(a.ndim)\nprint(b.ndim)",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_11"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_10"
                 },
                 {
                   "content": "Type of Array",
@@ -67,11 +75,13 @@
                     {
                       "content": "print(a.dtype)\nprint(b.dtype)",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_13"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_12"
                 },
                 {
                   "content": "Size of Array",
@@ -79,11 +89,13 @@
                     {
                       "content": "#size in bytes of each element\nprint(a.itemsize)\n\n#total size in bytes manually\nprint(a.size*a.itemsize)\n\n#total size in bytes by defined function\nprint(a.nbytes)",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_15"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_14"
                 },
                 {
                   "content": "Slicing",
@@ -91,11 +103,13 @@
                     {
                       "content": "print( d[1, -1] )\nprint( d[0, :] )\nprint( d[:, 2] )\nprint( d[0, 1:5:2] )",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_17"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_16"
                 },
                 {
                   "content": "Arrays Filled With",
@@ -103,11 +117,13 @@
                     {
                       "content": "#arrays filled with zeros\nprint(np.zeros((2,3,3)))\nprint(np.zeros((2,3)))\nprint(np.zeros((2)))\n\n#arrays filled with ones\nprint(np.ones((4,2,2),dtype='int32'))\n\n#arrays filled with specific no.\nprint(np.full((2,2),99))\n\n#array with shape same as a but filled with 4\nprint(np.full_like(a,4))",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_19"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_18"
                 },
                 {
                   "content": "Random",
@@ -115,11 +131,13 @@
                     {
                       "content": "print(np.random.rand(4,2))\n\n#randdom decimal with the same shape as a\nprint(np.random.random_sample(a.shape))\n\n#3X3 array filled with random integers b/w 4 and 8\nprint(np.random.randint(-4,8,size=(3,3)))",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_21"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_20"
                 },
                 {
                   "content": "Identity Matrix",
@@ -127,11 +145,13 @@
                     {
                       "content": "print(np.identity(5))",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_23"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_22"
                 },
                 {
                   "content": "Repeat",
@@ -139,11 +159,13 @@
                     {
                       "content": "arr = np.array([[1, 2],\n                [3, 4]])\n\nprint(np.repeat(arr, 2, axis=0))\n[[1, 2],\n [1, 2],  \n [3, 4],\n [3, 4]]\n\nprint(np.repeat(arr, 2, axis=1))\n[[1, 1, 2, 2],  \n [3, 3, 4, 4]]\n\nprint(np.repeat(arr, 2))\n[1, 1, 2, 2, 3, 3, 4, 4]",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_25"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_24"
                 },
                 {
                   "content": "Refrence VS Copy",
@@ -151,11 +173,13 @@
                     {
                       "content": "#The reference issue: changing 'h' also changes 'g'\ng=np.array([1,2,3])\nh=g\nh[0] = 100\nprint(g)\n[100   2   3]\n\n#A true copy: changing 'j' does NOT change 'i'\nj=np.array([1,2,3])\ni=j.copy()\nj[0] = 100\nprint(i)\n[1 2 3]",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_27"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_26"
                 },
                 {
                   "content": "Math",
@@ -163,11 +187,13 @@
                     {
                       "content": "#Math\nk=np.array([1,2,3,4])\nk=k+2\nprint(k)\n\nk=k-2\nprint(k)\n\nk=k/2\nprint(k)\n\nl=k+k\nprint(l)\n\nl=l**2\nprint(l)\n\nl=np.sin(l)\nprint(l)\n\nl=np.cos(l)\nprint(l)\n\n#Multplying 2 matrix\nm=np.ones((2,3))\nprint(m)\nn=np.full((3,2),2)\nprint(n)\nprint(np.matmul(m,n))\n\n#deteminant of matrix\no=np.identity(3)\nprint(o)\nprint(np.linalg.det(o))\n\n#Statistics: Finding minimum (down columns), maximum (overall), and sum (across rows)\np=np.array([[1,2,3],[4,5,6]])\nprint(np.min(p,axis=0))\nprint(np.max(p))\nprint(np.sum(p,axis=1))\n[1 2 3]\n6\n[ 6 15]",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_29"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_28"
                 },
                 {
                   "content": "Array Manipulation",
@@ -175,11 +201,13 @@
                     {
                       "content": "#array manuipualtion\nq=np.array([[1,2,3,4],[5,6,7,8]])\nprint(q)\nr=q.reshape((4,2))\nprint(r)\n#2X4 to 4X2\n[[1 2 3 4]\n [5 6 7 8]]\n[[1 2]\n [3 4]\n [5 6]\n [7 8]]\n\n#Vertical stacking\ns=np.array([1,2,3,4])\nt=np.array([5,6,7,8])\nprint(np.vstack([s,t,s]))\n[[1 2 3 4]\n [5 6 7 8]\n [1 2 3 4]]\n\n#Horixontal stack\nu=np.array([1,2,3,4])\nv=np.array([5,6,7,8])\nprint(np.hstack([u,v,v]))\n[1 2 3 4 5 6 7 8 5 6 7 8]",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_31"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_30"
                 },
                 {
                   "content": "Importing txt file and Conditions",
@@ -187,15 +215,18 @@
                     {
                       "content": "#importing\nw=np.genfromtxt('WeImportNow.txt',delimiter=',')\nw=w.astype('int32')\nprint(w)\n\n#Boolean Masking: Returning an array of True/False\nprint(w>10) \n\n#Advanced Indexing: keeping elements > 10 ---\")\nprint(w[w>10])\n\n#Conditional Checks: ANY elements > 10 down columns (axis=0) or rows (axis=1)?\nprint(np.any(w>10,axis=0))\nprint(np.any(w>10,axis=1))\n\n#Conditional Checks: Are ALL elements > 10 down columns?\nprint(np.all(w>10,axis=0))\n\n#Multiple Conditions: Elements > 10 AND < 15\nprint((w>10) & (w<15))\n\n#Multiple Conditions: NOT (~) operator, reversing the previous condition\nprint(~((w>10) & (w<15)))",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_33"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_32"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_3"
             },
             {
               "content": "Pandas",
@@ -206,11 +237,13 @@
                     {
                       "content": "import pandas as pd\nimport numpy as np",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_36"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_35"
                 },
                 {
                   "content": "Series",
@@ -221,11 +254,13 @@
                         {
                           "content": "data = [100 , 102, 104]\nseries = pd.Series(data)\nprint(series)\n# 0    100\n# 1    102\n# 2    104\n# dtype: int64",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_39"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_38"
                     },
                     {
                       "content": "Changing Indexing",
@@ -233,11 +268,13 @@
                         {
                           "content": "series1 = pd.Series(data , index =[\"a\",\"b\",\"c\"])\nprint(series1)\n# a    100\n# b    102\n# c    104\n# dtype: int64",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_41"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_40"
                     },
                     {
                       "content": "seaching value using index/key ( loc )",
@@ -245,11 +282,13 @@
                         {
                           "content": "print( series1.loc[\"c\"])\n#104",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_43"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_42"
                     },
                     {
                       "content": "seaching value using index/key ( iloc )",
@@ -257,15 +296,18 @@
                         {
                           "content": "series1.loc[\"c\"]=200\nprint( series1.iloc[2])",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_45"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_44"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_37"
                 },
                 {
                   "content": "DataFrames",
@@ -276,11 +318,13 @@
                         {
                           "content": "data = { \"Name\": [\"spongebob\", \"Patrick\", \"squidward\"],\n         \"Age\": [30, 35, 50]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n#         Name  Age\n# 0  spongebob   30\n# 1    Patrick   35\n# 2  squidward   50",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_48"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_47"
                     },
                     {
                       "content": "Changing Index",
@@ -288,11 +332,13 @@
                         {
                           "content": "df = pd.DataFrame(data, index=[\"Employee 1\", \"Employee 2\", \"Employee 3\"])\nprint(df)",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_50"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_49"
                     },
                     {
                       "content": "Shape",
@@ -300,11 +346,13 @@
                         {
                           "content": "print(df.shape)\n# (3, 2)",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_52"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_51"
                     },
                     {
                       "content": "First n rows ( head() )",
@@ -312,11 +360,13 @@
                         {
                           "content": "print(df.head())\n#                  Name  Age\n# Employee 1  spongebob   30\n# Employee 2    Patrick   35\n# Employee 3  squidward   50",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_54"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_53"
                     },
                     {
                       "content": "Specific Element",
@@ -324,11 +374,13 @@
                         {
                           "content": "print(df['Age'][\"Employee 1\"])\n# 30",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_56"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_55"
                     },
                     {
                       "content": "seaching value using index/key ( iloc )",
@@ -336,11 +388,13 @@
                         {
                           "content": "print(df.iloc[0])\n# Name    spongebob\n# Age            30\n# Name: Employee 1, dtype: object\n\nprint(df.iloc[:, 0])\n# Employee 1    spongebob\n# Employee 2      Patrick\n# Employee 3    squidward\n# Name: Name, dtype: str",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_58"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_57"
                     },
                     {
                       "content": "Set a Specific Column to be the Index of the DataFrame",
@@ -348,11 +402,13 @@
                         {
                           "content": "df = df.set_index(\"Age\")\nprint(df)\n#Age   Name           \n#30   spongebob\n#35     Patrick\n#50   squidwarddf = df.set_index(\"Age\")",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_60"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_59"
                     },
                     {
                       "content": "Conditional statements",
@@ -360,11 +416,13 @@
                         {
                           "content": "print(df.Name == \"spongebob\")\n# Employee 1     True\n# Employee 2    False\n# Employee 3    False\n# Name: Name, dtype: bool\n\n\nprint(df.loc[df.Name == \"spongebob\"])\n#                  Name  Age\n# Employee 1  spongebob   30\n\n\nprint(df.loc[(df.Name == \"spongebob\") & (df.Age >= 25)])\n#                  Name  Age\n# Employee 1  spongebob   30",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_62"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_61"
                     },
                     {
                       "content": "isin()",
@@ -372,11 +430,13 @@
                         {
                           "content": "# isin() - checking if values exist in a list\nprint(df.loc[df.Name.isin([\"spongebob\", \"Patrick\"])])\n#                  Name  Age\n# Employee 1  spongebob   30\n# Employee 2    Patrick   35",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_64"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_63"
                     },
                     {
                       "content": "Revering Values",
@@ -384,11 +444,13 @@
                         {
                           "content": "df[\"Age\"] = range(len(df), 0, -1)",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_66"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_65"
                     },
                     {
                       "content": "Reading CSV File",
@@ -396,11 +458,13 @@
                         {
                           "content": "pd.read_csv(\"file_location.csv\")",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_68"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_67"
                     },
                     {
                       "content": "Statistical Info",
@@ -408,11 +472,13 @@
                         {
                           "content": "# Statistical info\nprint(df[\"Age\"].describe())\n# count      3.000000\n# mean      38.333333\n# std       10.408330\n# min       30.000000\n# 25%       32.500000\n# 50%       35.000000\n# 75%       42.500000\n# max       50.000000\n# Name: Age, dtype: float64\n\n# Specifically print a statistical method's result\nprint(df[\"Age\"].mean())\n# 38.333333333333336\n\n# Finding the index of the max value\nprint(df['Age'].idxmax())\n# Employee 3",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_70"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_69"
                     },
                     {
                       "content": "Unique",
@@ -420,11 +486,13 @@
                         {
                           "content": "# Unique items in a column\nprint(df[\"Name\"].unique())\n# <StringArray>\n# ['spongebob', 'Patrick', 'squidward']\n# Length: 3, dtype: str\n\n\n# To see unique values and how often they occur in the dataset\nprint(df[\"Name\"].value_counts())\n# Name\n# spongebob    1\n# Patrick      1\n# squidward    1\n# Name: count, dtype: int64",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_72"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_71"
                     },
                     {
                       "content": "Lambda\n\n> # map() returns a new Series where all the values have been transformed by your function.\n> # apply() is the equivalent method if we want to transform a whole DataFrame by calling a custom method on each row/column.",
@@ -432,11 +500,13 @@
                         {
                           "content": "remean = df['Age'].mean()\nprint(df['Age'].map(lambda p: p - remean))\n# Employee 1    -8.333333\n# Employee 2    -3.333333\n# Employee 3    11.666667\n# Name: Age, dtype: float64",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_74"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_73"
                     },
                     {
                       "content": "apply()",
@@ -444,11 +514,13 @@
                         {
                           "content": "remean = df['Age'].mean()\ndef remean_apply(row):\n      row['Age'] = row['Age'] - remean\n      return row\n\nprint(df.apply(remean_apply, axis='columns'))\n#                        Name        Age\n# Employee 1  spongebob  -8.333333\n# Employee 2    Patrick  -3.333333\n# Employee 3  squidward  11.666667",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_76"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_75"
                     },
                     {
                       "content": "Sting Operation",
@@ -456,11 +528,13 @@
                         {
                           "content": "# String operation\nprint(df['Name'] + \" - \" + df['Age'].astype(str))\n# Employee 1    spongebob - 30\n# Employee 2      Patrick - 35\n# Employee 3    squidward - 50\n# dtype: str",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_78"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_77"
                     },
                     {
                       "content": "Replicating value_counts using groupby",
@@ -468,11 +542,13 @@
                         {
                           "content": "print(df.groupby('Age')['Age'].count())\n# Age\n# 30    1\n# 35    1\n# 50    1\n# Name: Age, dtype: int64",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_80"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_79"
                     },
                     {
                       "content": "DataTypes",
@@ -480,11 +556,13 @@
                         {
                           "content": "print(df.dtypes)\n# Name      str\n# Age     int64\n# dtype: object",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_82"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_81"
                     },
                     {
                       "content": "Type Conversion",
@@ -492,11 +570,13 @@
                         {
                           "content": "df.Age = df.Age.astype('float64')\nprint(df)\n#                  Name   Age\n# Employee 1  spongebob  30.0\n# Employee 2    Patrick  35.0\n# Employee 3  squidward  50.0",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_84"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_83"
                     },
                     {
                       "content": "Retrieve all NaN Values",
@@ -504,11 +584,13 @@
                         {
                           "content": "# df.loc['Employee 1', 'Age'] = np.nan\nprint(df[pd.isnull(df.Age)])",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_86"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_85"
                     },
                     {
                       "content": "Replacing Specific Values",
@@ -516,11 +598,13 @@
                         {
                           "content": "# Replacing specific values\ndf.Name.replace(\"old\", \"new\")\n\n# Renaming column headings\nprint(df.rename(columns={'Age': 'Age in years'}))\n#                  Name  Age in years\n# Employee 1  spongebob          30.0\n# Employee 2    Patrick          35.0\n# Employee 3  squidward          50.0\n\n\n# Renaming indexes\nprint(df.rename(index={'Employee 1': 'firstEntry', 'Employee 2': 'SecondEntry'}))\n#                    Name   Age\n# firstEntry    spongebob  30.0\n# SecondEntry     Patrick  35.0\n# Employee 3    squidward  50.0\n\n\n# Renaming the axis titles\nprint(df.rename_axis(\"Info\", axis='rows').rename_axis(\"Sr no.\", axis='columns'))\n# Sr no.            Name   Age\n# Info                       \n# Employee 1  spongebob  30.0\n# Employee 2    Patrick  35.0\n# Employee 3  squidward  50.0",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_88"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_87"
                     },
                     {
                       "content": "Concat",
@@ -528,11 +612,13 @@
                         {
                           "content": "# Concat (Combines different DataFrames vertically or horizontally)\npd.concat([df1, df2])",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_90"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_89"
                     },
                     {
                       "content": "Merge",
@@ -540,11 +626,13 @@
                         {
                           "content": "# Join / Merge (Combines DataFrames side-by-side based on a common column)\npd.merge(df1, df2, on='common_column_name', how='inner')",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_92"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_91"
                     },
                     {
                       "content": "Deleteing MIssing Values",
@@ -552,11 +640,13 @@
                         {
                           "content": "# Dropping missing values\ndf = df.dropna(axis=0)",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_94"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_93"
                     },
                     {
                       "content": "Choosing Features",
@@ -564,24 +654,29 @@
                         {
                           "content": "# Choosing features (typically for Machine Learning)\ndf_features = ['Age']\nX = df[df_features]",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_96"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_95"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_46"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_34"
             },
             {
               "content": "Matplotlib",
               "children": [],
-              "branchColor": "#8d6e63"
+              "branchColor": "#2ecc71",
+              "id": "node_97"
             },
             {
               "content": "ML",
@@ -592,11 +687,13 @@
                     {
                       "content": "from sklearn.metrics import confusion_matriximport seaborn as sns\ncm = confusion_matrix(y_test, y_pred)sns.heatmap(cm, annot=True, fmt='d')import pandas as pd\nfrom sklearn.model_selection import train_test_split, cross_val_score\nfrom sklearn.metrics import mean_absolute_error\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.impute import SimpleImputer\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import OneHotEncoder\nfrom xgboost import XGBRegressor\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.metrics import confusion_matriximport",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_100"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_99"
                 },
                 {
                   "content": "Loading the Model",
@@ -604,11 +701,13 @@
                     {
                       "content": "melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'\n\n# Loading a dataframe\nmelbourne_data = pd.read_csv(melbourne_file_path)",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_102"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_101"
                 },
                 {
                   "content": "Single Tree Model",
@@ -616,11 +715,13 @@
                     {
                       "content": "melbourne_model = DecisionTreeRegressor(random_state=1)\n\n# Fit model\nmelbourne_model.fit(X, y)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_104"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_103"
                 },
                 {
                   "content": "Train/Test Split",
@@ -628,11 +729,13 @@
                     {
                       "content": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2 , random_state=42)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_106"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_105"
                 },
                 {
                   "content": "Standard Scalar",
@@ -640,11 +743,13 @@
                     {
                       "content": "scaler = StandardScaler()X_train_p= scaler.fit_transform(X_train)X_test_p = scaler.transform(X_test)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_108"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_107"
                 },
                 {
                   "content": "Overfitting VS underfitting",
@@ -652,11 +757,13 @@
                     {
                       "content": "#function to get MAE of various models\ndef get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):\n    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)\n    model.fit(train_X, train_y)\n    preds_val = model.predict(val_X)\n    mae = mean_absolute_error(val_y, preds_val)\n    return mae\n\n# Compare MAE with differing values of max leaf mode , 5= high MAE = underfitting , 5000= high MAE = overfitting , 500= perfect model\nfor max_leaf_nodes in [5, 50, 500, 5000]:\n    my_mae = get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y)\n    print(\"Max leaf nodes: %d  \\t\\t Mean Absolute Error:  %d\" % (max_leaf_nodes, my_mae))",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_110"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_109"
                 },
                 {
                   "content": "Random Forest",
@@ -664,11 +771,13 @@
                     {
                       "content": "forest_model = RandomForestRegressor(random_state=1)\nforest_model.fit(train_X, train_y)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_112"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_111"
                 },
                 {
                   "content": "Missing values",
@@ -676,7 +785,8 @@
                     {
                       "content": "# Print columns with missing values\n\n#series of all columns with count of missing values\nmissing_val_count_by_column = (X_train.isnull().sum())\n#using the series to find columns with atleast1 missng values \nprint(missing_val_count_by_column[missing_val_count_by_column > 0])\n\n#list of column with atleast 1 missng values\ncols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_114"
                     },
                     {
                       "content": "Drop",
@@ -684,11 +794,13 @@
                         {
                           "content": "reduced_X_train = X_train.drop(cols_with_missing, axis=1)\nreduced_X_valid = X_valid.drop(cols_with_missing, axis=1)",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_116"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_115"
                     },
                     {
                       "content": "Impute",
@@ -696,11 +808,13 @@
                         {
                           "content": "my_imputer = SimpleImputer() imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train)) imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid)) imputed_X_train.columns = X_train.columns imputed_X_valid.columns = X_valid.columns",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_118"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_117"
                     },
                     {
                       "content": "Extended Impute",
@@ -708,11 +822,13 @@
                         {
                           "content": "X_train_plus = X_train.copy()\nX_valid_plus = X_valid.copy()\nfor col in cols_with_missing:\n    X_train_plus[col + '_was_missing'] = X_train_plus[col].isnull()\n    X_valid_plus[col + '_was_missing'] = X_valid_plus[col].isnull()\n\nmy_imputer = SimpleImputer()\n\nimputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train_plus))\nimputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid_plus))\n\nimputed_X_train.columns = X_train_plus.columns\nimputed_X_valid.columns = X_valid_plus.columns",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#2ecc71",
+                          "id": "node_120"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_119"
                     },
                     {
                       "content": "Pipelines and columns tranformer",
@@ -720,11 +836,13 @@
                         {
                           "content": "# ColumnTransformer class to bundle together different preprocessing steps\n\n# Preprocessing for numerical data\nnumerical_transformer = SimpleImputer(strategy='constant')\ndf[['your_column_name']] = numerical_transformer.fit_transform(df[['your_column_name']])\n\n# Preprocessing for categorical data\ncategorical_transformer = Pipeline(steps=[\n    ('imputer', SimpleImputer(strategy='most_frequent')),\n    ('onehot', OneHotEncoder(handle_unknown='ignore'))\n])\ndf[['your_column_name']] = categorical_transformer.fit_transform(df[['your_column_name']])\n\n# Bundle preprocessing for numerical and categorical data\n# (Note: numerical_cols and categorical_cols need to be defined in your script)\npreprocessor = ColumnTransformer(\n    transformers=[\n        ('num', numerical_transformer, numerical_cols), \n        ('cat', categorical_transformer, categorical_cols)\n    ])\n\n# Define the model\nmodel = RandomForestRegressor(n_estimators=100, random_state=0)\n\n# Bundle preprocessing and modeling code in a pipeline\nmy_pipeline = Pipeline(steps=[\n    ('preprocessor', preprocessor),\n    ('model', model)\n])",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_122"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_121"
                     },
                     {
                       "content": "Cross Validation",
@@ -732,11 +850,13 @@
                         {
                           "content": "# Multiply by -1 since sklearn calculates negative MAE\nscores = -1 * cross_val_score(my_pipeline, X,y,cv=5,scoring='neg_mean_absolute_error')\nprint(\"MAE scores:\\n\", scores)",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_124"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_123"
                     },
                     {
                       "content": "Gradient Boosting",
@@ -744,11 +864,13 @@
                         {
                           "content": "my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=4)\nmy_model.fit(X_train, y_train,  \n             early_stopping_rounds=5, \n             eval_set=[(X_valid, y_valid)], \n             verbose=False)",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_126"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_125"
                     },
                     {
                       "content": "Data leakage",
@@ -756,15 +878,18 @@
                         {
                           "content": "# There are two main types of leakage: target leakage and train-test contamination.\n#\n# Target leakage:\n# Occurs when your predictors include data that will not be available at the time you make predictions.\n# To prevent this type of data leakage, any variable updated (or created) after the target value is realized should be excluded.\n#\n# Train-Test Contamination:\n# A different type of leak occurs when you aren't careful to distinguish training data from validation data.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_128"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_127"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_113"
                 },
                 {
                   "content": "extractind column with specific datatypes from a dataframe",
@@ -772,11 +897,13 @@
                     {
                       "content": "numeric_cols = X_train.select_dtypes(include=['int64','float64']).columns.tolist()",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_130"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_129"
                 },
                 {
                   "content": "Confusion Matrics",
@@ -784,11 +911,13 @@
                     {
                       "content": "y_pred = np.argmax(model.predict(X_test_p), axis=1)\n\nfrom sklearn.metrics import confusion_matrix\nimport seaborn as sns\ncm = confusion_matrix(y_test, y_pred)\nsns.heatmap(cm, annot=True, fmt='d')",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_132"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_131"
                 },
                 {
                   "content": "plotting",
@@ -796,19 +925,23 @@
                     {
                       "content": "history=Trained_model.history\n\nimport matplotlib.pyplot as plt\nplt.plot( history['loss'] , label='train')\nplt.plot( history['val_loss'] , label='validation')\nplt.ylabel('loss')\nplt.xlabel('epoch')\nplt.show()",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_134"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_133"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_98"
             }
           ],
           "collapsed": true,
-          "branchColor": "#3498db"
+          "branchColor": "#3498db",
+          "id": "node_2"
         },
         {
           "content": "Fundamentals of Deep learning",
@@ -819,11 +952,13 @@
                 {
                   "content": "local:img-1790047137573-beea8fe484369cd1",
                   "children": [],
-                  "branchColor": "#e67e22"
+                  "branchColor": "#e67e22",
+                  "id": "node_137"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_136"
             },
             {
               "content": "DL defination",
@@ -831,11 +966,13 @@
                 {
                   "content": "Deep learning is a specialized subfield of machine learning and artificial intelligence (AI) utilizing deep artificial neural networks (ANNs) containing multiple hidden layers to automatically extract high-level feature representations from unstructured data.",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_139"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_138"
             },
             {
               "content": "Neural Network",
@@ -846,11 +983,13 @@
                     {
                       "content": "local:img-1790047931893-ee798507668c8fa2",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_142"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_141"
                 },
                 {
                   "content": "Layers",
@@ -861,16 +1000,19 @@
                         {
                           "content": "It's the entry point for raw data.  the number of nodes exactly matches the number of features in your dataset.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_145"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_144"
                     },
                     {
                       "content": "Hiddeen Layers",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_146"
                     },
                     {
                       "content": "Output Layers",
@@ -878,15 +1020,18 @@
                         {
                           "content": "The final layer that produces the model's prediction\nactivation function for hidden layer just before the output layer is decided on the basis of task :-\n1) Regression (Predicting a value): A single node with a linear (or no) activation function\n2) Binary Classification (Yes/No): A single node using a Sigmoid activation function to output a probability between 0 and 1.\n3) Multi-class Classification: Multiple nodes (one for each class) using a SoftMax activation function to output a probability distribution across all possible categories.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_148"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_147"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_143"
                 },
                 {
                   "content": "Weights and bias",
@@ -894,16 +1039,19 @@
                     {
                       "content": "each connection from one perceptron to another has some kind of weight showing how closely related the 2 perceptron's are to each other\nWeights are used to shift the line , Bias is used to determine the slope",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_150"
                     },
                     {
                       "content": "local:img-1790052092700-b0547e27f32e135b",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_151"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_149"
                 },
                 {
                   "content": "Types",
@@ -914,11 +1062,13 @@
                         {
                           "content": "Neural network with 1 or less hidden layers",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_154"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_153"
                     },
                     {
                       "content": "Deep NN",
@@ -926,15 +1076,18 @@
                         {
                           "content": "Neural network with 2 or more hidden layers",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_156"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_155"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_152"
                 },
                 {
                   "content": "Types according to Functions",
@@ -942,7 +1095,8 @@
                     {
                       "content": "ANN",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_158"
                     },
                     {
                       "content": "CNN",
@@ -950,11 +1104,13 @@
                         {
                           "content": "The Convolutional Neural Networks or CNNs are primarily used for tasks related to computer vision or image processing.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_160"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_159"
                     },
                     {
                       "content": "RNN",
@@ -962,11 +1118,13 @@
                         {
                           "content": "The Recurrent Neural Networks or RNN are primarily used to model sequential data, such as text, audio, or any type of data that represents sequence or time.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_162"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_161"
                     },
                     {
                       "content": "GAN",
@@ -974,19 +1132,23 @@
                         {
                           "content": "This type of network essentially learns the structure of the data, and patterns\nin a way that it can be used to generate new examples, similar to that of the original dataset.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_164"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_163"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_157"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_140"
             },
             {
               "content": "Trainng",
@@ -1000,40 +1162,48 @@
                         {
                           "content": "local:img-1790091386536-480f79548dd5341e",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_168"
                         },
                         {
                           "content": "Constant LR",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_169"
                         },
                         {
                           "content": "Time decay",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_170"
                         },
                         {
                           "content": "Step based decay",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_171"
                         },
                         {
                           "content": "Exponential decay",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_172"
                         },
                         {
                           "content": "Custom LR",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_173"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_167"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_166"
                 },
                 {
                   "content": "loops",
@@ -1044,46 +1214,55 @@
                         {
                           "content": "Imports",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_176"
                         },
                         {
                           "content": "Defining an Input and Output Layer",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_177"
                         },
                         {
                           "content": "Scaling the Data",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_178"
                         },
                         {
                           "content": "Forward propogation",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_179"
                         },
                         {
                           "content": "Loss calculation\n- MAE\n- MSE\n- local:img-1790091785595-3923fa15b7795176\n- Binary Cross Entropy\n- # Cross-entropy is a sort of measure for the distance from one probability distribution to another.\n# Activation function: the sigmoid activation.\n- local:img-1790091876784-50a40517875c2f4d\n- Categorical Cross Entropy\n- local:img-1790091915519-dcd9edfa34177b47",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_180"
                         },
                         {
                           "content": "Back propogation\n- local:img-1790092088253-51c9975a8b3d5f10",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_181"
                         },
                         {
                           "content": "Parameter update\n- Complexity of the model depends on no. of parameters and it's training , which is controlled by the change in weights and bias combined called as parameters .\n- Issues\n- Vanishing gradient\n- ● As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.\n● In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_182"
                         },
                         {
                           "content": "Plot Curve",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_183"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_175"
                     },
                     {
                       "content": "Epoch",
@@ -1091,19 +1270,23 @@
                         {
                           "content": "One complete pass of the entire dataset through the neural network",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_185"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_184"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_174"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_165"
             },
             {
               "content": "Gradient Descent",
@@ -1111,12 +1294,14 @@
                 {
                   "content": "local:img-1790092956486-65461ba74df8fe10",
                   "children": [],
-                  "branchColor": "#e67e22"
+                  "branchColor": "#e67e22",
+                  "id": "node_187"
                 },
                 {
                   "content": "Defination",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_188"
                 },
                 {
                   "content": "Types",
@@ -1124,26 +1309,31 @@
                     {
                       "content": "Batch GD",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_190"
                     },
                     {
                       "content": "Stochastic GD",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_191"
                     },
                     {
                       "content": "Mini-Batch GD",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_192"
                     },
                     {
                       "content": "Online GD",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_193"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_189"
                 },
                 {
                   "content": "Optimization Algorithms",
@@ -1151,30 +1341,36 @@
                     {
                       "content": "SGD (Vanilla)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_195"
                     },
                     {
                       "content": "Momentum",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_196"
                     },
                     {
                       "content": "RMSProp",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_197"
                     },
                     {
                       "content": "Adam",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_198"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_194"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_186"
             },
             {
               "content": "Overfitting",
@@ -1182,12 +1378,14 @@
                 {
                   "content": "● Overfitting describes the phenomenon of fitting the training data too closely, maybe with hypotheses that are too complex.",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_200"
                 },
                 {
                   "content": "Training Curve Diagnosis",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_201"
                 },
                 {
                   "content": "Regularization",
@@ -1195,17 +1393,20 @@
                     {
                       "content": "L2 ( Ridge )",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_203"
                     },
                     {
                       "content": "L1 ( Lasso )",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_204"
                     },
                     {
                       "content": "Batch Normalization",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_205"
                     },
                     {
                       "content": "Dropout",
@@ -1213,39 +1414,47 @@
                         {
                           "content": "# We randomly drop out some fraction of a layer's input units every step of training.\n# Making it much harder for the network to learn those spurious patterns in the training data.\n# Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_207"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_206"
                     },
                     {
                       "content": "Early Stopping",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_208"
                     },
                     {
                       "content": "Data Augmentation",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_209"
                     },
                     {
                       "content": "Simplify The Model",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_210"
                     },
                     {
                       "content": "local:img-1790093002894-dfa710694bff5724",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_211"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_202"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_199"
             },
             {
               "content": "Applications",
@@ -1253,36 +1462,43 @@
                 {
                   "content": "Computer Vision",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_213"
                 },
                 {
                   "content": "Natural language Processing ( NLP )",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_214"
                 },
                 {
                   "content": "Speech Recognition",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_215"
                 },
                 {
                   "content": "Healthcare",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_216"
                 },
                 {
                   "content": "Autonomous Vehicles",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_217"
                 },
                 {
                   "content": "Recommendation Systems",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_218"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_212"
             },
             {
               "content": "CODES",
@@ -1293,11 +1509,13 @@
                     {
                       "content": "import pandas as pd\nfrom tensorflow import keras\nfrom tensorflow.keras import layers\nfrom tensorflow.keras.callbacks import EarlyStopping",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_221"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_220"
                 },
                 {
                   "content": "Weights ,bias of a model",
@@ -1305,11 +1523,13 @@
                     {
                       "content": "w, b = model.weights\nprint(\"Weights\\n{}\\n\\nBias\\n{}\".format(w, b))",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_223"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_222"
                 },
                 {
                   "content": "Model HIdden layer",
@@ -1317,11 +1537,13 @@
                     {
                       "content": "model = keras.Sequential([\n     # the hidden ReLU layers\n     layers.Dense(units=4, activation='relu', input_shape=[2]),\n     layers.Dropout(rate=0.3)\n     layers.Dense(units=3, activation='relu'),\n     # the linear output layer \n     layers.Dense(units=1),\n ])",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_225"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_224"
                 },
                 {
                   "content": "compile",
@@ -1329,11 +1551,13 @@
                     {
                       "content": "model.compile(\n    optimizer=optimizer=keras.optimizers.Adam(learning_rate=lr),\n    loss='mae',\n   metrics=['binary_accuracy']\n)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_227"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_226"
                 },
                 {
                   "content": "fit",
@@ -1341,11 +1565,13 @@
                     {
                       "content": "model.fit(X_train_p , y_train , epochs=100 , batch_size=16 , callbacks=[EarlyStopping(patience=10 , restore_best_weights=True)] ,validation_split=0.2 )",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_229"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_228"
                 },
                 {
                   "content": "scaling 0 to 1",
@@ -1353,11 +1579,13 @@
                     {
                       "content": "from sklearn.preprocessing import MinMaxScaler\n\nscaler = MinMaxScaler()\ntrain_scaled = scaler.fit_transform(train_df[['meantemp']])\ntest_scaled = scaler.transform(test_df[['meantemp']])",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_231"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_230"
                 },
                 {
                   "content": "Predict",
@@ -1365,11 +1593,13 @@
                     {
                       "content": "print(\"First 5 houses features:\\n\", X.head())\nprint(\"The predictions are:\\n\", melbourne_model.predict(X.head()))",
                       "children": [],
-                      "branchColor": "#2ecc71"
+                      "branchColor": "#2ecc71",
+                      "id": "node_233"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_232"
                 },
                 {
                   "content": "MAE Value",
@@ -1377,11 +1607,13 @@
                     {
                       "content": "predicted_home_prices = melbourne_model.predict(X)\nprint(\"In-Sample MAE:\", mean_absolute_error(y, predicted_home_prices))",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_235"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_234"
                 },
                 {
                   "content": "Manual Epoch",
@@ -1389,19 +1621,23 @@
                     {
                       "content": "with tf.GradientTape() as tape:\n     preds = model(X)                                                  \n# forward propagation        \nloss = tf.reduce_mean(            tf.keras.losses.sparse_categorical_crossentropy(y, preds))   \n# loss calculation\n  grads=tape.gradient(loss,model.trainable_variables)                \n# backpropagation    model.optimizer.apply_gradients(zip(grads, model.trainable_variables))  \n# parameter update",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_237"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_236"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_219"
             }
           ],
           "collapsed": true,
-          "branchColor": "#3498db"
+          "branchColor": "#3498db",
+          "id": "node_135"
         },
         {
           "content": "Activation functions",
@@ -1412,12 +1648,14 @@
                 {
                   "content": "Binary Step Function",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_240"
                 },
                 {
                   "content": "Linear Step Function",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_241"
                 },
                 {
                   "content": "Non-linear Activation Functions",
@@ -1428,16 +1666,19 @@
                         {
                           "content": "It is a differentiable activation function means it can be used for gradient Descent. ( good for probabilities)\nSuffers form Vanishing Gradient\nOutput Range ➖ Binary - 0 or 1\nf(x)=1/(1+e^(-x))",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_244"
                         },
                         {
                           "content": "local:img-1790393103817-225faf5ce9b0aab0",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_245"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_243"
                     },
                     {
                       "content": "Tanh",
@@ -1445,16 +1686,19 @@
                         {
                           "content": "It is Zero centered Means can be used for Gradient Descent\nOutput range ➖[ -1    1 ]\nf(x)={e^x-e^(-x)}/{e^x+e^(-x)}",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_247"
                         },
                         {
                           "content": "local:img-1790393223254-d926b16f9fe22215",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_248"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_246"
                     },
                     {
                       "content": "Relu",
@@ -1462,21 +1706,25 @@
                         {
                           "content": "It’s main advantage is that it avoids and rectifies vanishing gradient problem and less computationally expensive than tanh and sigmoid.\nf(x)=max(0,x)",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_250"
                         },
                         {
                           "content": "local:img-1790393277278-e7987caa9b7aa84b",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_251"
                         },
                         {
                           "content": "local:img-1790393283701-dc39cc888cd156fc",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_252"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_249"
                     },
                     {
                       "content": "Softmax",
@@ -1484,16 +1732,19 @@
                         {
                           "content": "It is used when output is categorical\nit calculates the possibility of target class over all target classes\nsoftmax(z_i)={exp(z_i)}/{\\sum_j exp(z_j)}",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_254"
                         },
                         {
                           "content": "local:img-1790393441404-d3b743f1fdc7d1fe",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_255"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_253"
                     },
                     {
                       "content": "Swish",
@@ -1501,16 +1752,19 @@
                         {
                           "content": "Inspired by Sigmoid Function , Used for Gating in LSTM and Highway Networks",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_257"
                         },
                         {
                           "content": "local:img-1790393540176-297957c0cc932c72",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_258"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_256"
                     },
                     {
                       "content": "Maxout",
@@ -1518,11 +1772,13 @@
                         {
                           "content": "Generalization of ReLU and LeakyReLU ,it’s a learnable activation function.\nmax(w^T_1+b_1 , w^t_2+b_2)",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_260"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_259"
                     },
                     {
                       "content": "Softplus",
@@ -1530,29 +1786,35 @@
                         {
                           "content": "smother version of ReLU\nf(x)=ln(1+exp x)",
                           "children": [],
-                          "branchColor": "#2ecc71"
+                          "branchColor": "#8d6e63",
+                          "id": "node_262"
                         },
                         {
                           "content": "local:img-1790393637806-8a5e3d373e266f7f",
                           "children": [],
-                          "branchColor": "#e67e22"
+                          "branchColor": "#e67e22",
+                          "id": "node_263"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_261"
                     },
                     {
                       "content": "local:img-1790393472497-d23c9b03e3593205",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_264"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_242"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_239"
             },
             {
               "content": "Choosing Activation Functions",
@@ -1560,15 +1822,18 @@
                 {
                   "content": "local:img-1790393499824-a742c78b4f96aa8b",
                   "children": [],
-                  "branchColor": "#e67e22"
+                  "branchColor": "#e67e22",
+                  "id": "node_266"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_265"
             }
           ],
           "collapsed": true,
-          "branchColor": "#3498db"
+          "branchColor": "#3498db",
+          "id": "node_238"
         },
         {
           "content": "Recureent Nural Network ( RNN ) and Long Short-Tem Memory (LSTM)",
@@ -1579,7 +1844,8 @@
                 {
                   "content": "Designed to handle sequential data by maintaining a hidden state ( memory) that captures information from previous time steps.",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_269"
                 },
                 {
                   "content": "RNN Equations",
@@ -1587,11 +1853,13 @@
                     {
                       "content": "local:img-1790449747108-08f92c0bbbb06956",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_271"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_270"
                 },
                 {
                   "content": "RNN Representation",
@@ -1599,11 +1867,13 @@
                     {
                       "content": "local:img-1790449795875-e6be65195a5f0e9e",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_273"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_272"
                 },
                 {
                   "content": "Types of RNN Outputs",
@@ -1614,11 +1884,13 @@
                         {
                           "content": "Used for Binary Classification",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_276"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_275"
                     },
                     {
                       "content": "Many to One",
@@ -1626,11 +1898,13 @@
                         {
                           "content": "Used for Sentiment Classification",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_278"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_277"
                     },
                     {
                       "content": "One to Many",
@@ -1638,11 +1912,13 @@
                         {
                           "content": "Image Captioning",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_280"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_279"
                     },
                     {
                       "content": "Many to Many ( Encoder - Decoder )",
@@ -1650,11 +1926,13 @@
                         {
                           "content": "Language Translation",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_282"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_281"
                     },
                     {
                       "content": "Many to Many ( Synchronized )",
@@ -1662,15 +1940,18 @@
                         {
                           "content": "POS Tagging",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_284"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_283"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_274"
                 },
                 {
                   "content": "Activation Functions",
@@ -1681,11 +1962,13 @@
                         {
                           "content": "Most Common in RNN",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_287"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_286"
                     },
                     {
                       "content": "ReLU",
@@ -1693,11 +1976,13 @@
                         {
                           "content": "Fatser but can be less stable",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_289"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_288"
                     },
                     {
                       "content": "Sigmoid",
@@ -1705,15 +1990,18 @@
                         {
                           "content": "Usefull for gate and outputs",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_291"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_290"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_285"
                 },
                 {
                   "content": "Vanishing Gradient",
@@ -1721,11 +2009,13 @@
                     {
                       "content": "Gradients Become too small as tehy flow back ( model forgets long term info)",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_293"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_292"
                 },
                 {
                   "content": "Exploding Gradients",
@@ -1733,11 +2023,13 @@
                     {
                       "content": "Gradients Grow too large as they flow back ( model becomes unstable )",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_295"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_294"
                 },
                 {
                   "content": "Drawbacks of RNN",
@@ -1745,30 +2037,36 @@
                     {
                       "content": "RNN suffers from memory loss",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_297"
                     },
                     {
                       "content": "Suffers from Vanishing Gradeint",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_298"
                     },
                     {
                       "content": "Difficult Training",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_299"
                     },
                     {
                       "content": "BPTT",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_300"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_296"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_268"
             },
             {
               "content": "LSTM",
@@ -1776,7 +2074,8 @@
                 {
                   "content": "A type of RNN model designed to prevent the output of a neural network form either exploding or decaying",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_302"
                 },
                 {
                   "content": "Activation functions",
@@ -1784,21 +2083,25 @@
                     {
                       "content": "Tanh",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_304"
                     },
                     {
                       "content": "Sigmoid",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_305"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_303"
                 },
                 {
                   "content": "local:img-1790451390375-20b386de33e7a7ac",
                   "children": [],
-                  "branchColor": "#e67e22"
+                  "branchColor": "#e67e22",
+                  "id": "node_306"
                 },
                 {
                   "content": "CODES",
@@ -1809,28 +2112,34 @@
                         {
                           "content": "model = keras.Sequential([    layers.LSTM(50, input_shape=(30, 1)),    layers.Dense(1)])",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_309"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_308"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_307"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_301"
             },
             {
               "content": "local:img-1790450800882-2943872cde5c49e9",
               "children": [],
-              "branchColor": "#e67e22"
+              "branchColor": "#e67e22",
+              "id": "node_310"
             }
           ],
           "collapsed": true,
-          "branchColor": "#3498db"
+          "branchColor": "#3498db",
+          "id": "node_267"
         },
         {
           "content": "Convolutional Neural Network ( CNN )",
@@ -1844,16 +2153,19 @@
                     {
                       "content": "Location-shift Sensitivity",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_314"
                     },
                     {
                       "content": "Computationally Expensive",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_315"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_313"
                 },
                 {
                   "content": "Convolution",
@@ -1861,15 +2173,18 @@
                     {
                       "content": "Convolution is a Mathematical operation where two functions are blended together to produce a third function . It actually measures how much one function overlaps with another .\nIn Deep Learning Small Matrices and Big Matrices roll together to form a single new value, which helps the computer detect patterns like edges, curves, or textures.",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_317"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_316"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_312"
             },
             {
               "content": "Image Processing",
@@ -1877,21 +2192,25 @@
                 {
                   "content": "Resizing",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_319"
                 },
                 {
                   "content": "Normalization",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_320"
                 },
                 {
                   "content": "Data Augmentation",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_321"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_318"
             },
             {
               "content": "CNN architecture",
@@ -1899,7 +2218,8 @@
                 {
                   "content": "Filters / Kernels",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_323"
                 },
                 {
                   "content": "Stride",
@@ -1907,11 +2227,13 @@
                     {
                       "content": "How many cells the filter is moved",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_325"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_324"
                 },
                 {
                   "content": "Padding",
@@ -1919,11 +2241,13 @@
                     {
                       "content": "It allows us to use a CONV layer without necessarily shrinking the height and width of the volumes.\nIt helps us keep more of the information at the border of an image.",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_327"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_326"
                 },
                 {
                   "content": "Output Dimension Formula",
@@ -1931,16 +2255,19 @@
                     {
                       "content": "n=height of current layer\nf=Spatial size of filter\np=padding\ns=stride\nl=the current layer you are calculating\nl -1=the previous layer.",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_329"
                     },
                     {
                       "content": "local:img-1790393948104-c1abb04588ced3b4",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_330"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_328"
                 },
                 {
                   "content": "Convolution on Volume",
@@ -1948,11 +2275,13 @@
                     {
                       "content": "local:img-1790394030823-1629d651e0087884",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_332"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_331"
                 },
                 {
                   "content": "Multiple Filters",
@@ -1960,11 +2289,13 @@
                     {
                       "content": "local:img-1790394049896-71908f1a88fc13d7",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_334"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_333"
                 },
                 {
                   "content": "1×1 Convolution",
@@ -1972,11 +2303,13 @@
                     {
                       "content": "local:img-1790394069055-3ca96543aa67f113",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_336"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_335"
                 },
                 {
                   "content": "Pooling Layers",
@@ -1984,22 +2317,26 @@
                     {
                       "content": "Reducing the size of the representations to make some of the features it detects a bit more robust.\n\nit has hyper-parameters:\n\nbut it doesn’t have parameter; there’s nothing for gradient descent to learn",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_338"
                     },
                     {
                       "content": "Max polling",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_339"
                     },
                     {
                       "content": "AVG Polling",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_340"
                     },
                     {
                       "content": "local:img-1790394202090-5a7d876cac78ce3e",
                       "children": [],
-                      "branchColor": "#e67e22"
+                      "branchColor": "#e67e22",
+                      "id": "node_341"
                     },
                     {
                       "content": "Hyper-Parameters",
@@ -2007,25 +2344,30 @@
                         {
                           "content": "Size",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_343"
                         },
                         {
                           "content": "Stride",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_344"
                         },
                         {
                           "content": "Type",
                           "children": [],
-                          "branchColor": "#8d6e63"
+                          "branchColor": "#8d6e63",
+                          "id": "node_345"
                         }
                       ],
                       "collapsed": true,
-                      "branchColor": "#3498db"
+                      "branchColor": "#3498db",
+                      "id": "node_342"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_337"
                 },
                 {
                   "content": "Batch Normalization layer",
@@ -2033,11 +2375,13 @@
                     {
                       "content": "To normalize inputs between layers. could be used before or after the activation function layer",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_347"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_346"
                 },
                 {
                   "content": "Dropout Layer",
@@ -2045,11 +2389,13 @@
                     {
                       "content": "Drop out a fraction of neurons from a layer.",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_349"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_348"
                 },
                 {
                   "content": "Flatten Layer",
@@ -2057,11 +2403,13 @@
                     {
                       "content": "To convert multi-dimensional convolutional blocks into 1-D vectors",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_351"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_350"
                 },
                 {
                   "content": "Fully Connected Layer",
@@ -2069,15 +2417,18 @@
                     {
                       "content": "To process the flattened image data and carry out the classification.",
                       "children": [],
-                      "branchColor": "#8d6e63"
+                      "branchColor": "#8d6e63",
+                      "id": "node_353"
                     }
                   ],
                   "collapsed": true,
-                  "branchColor": "#3498db"
+                  "branchColor": "#3498db",
+                  "id": "node_352"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_322"
             },
             {
               "content": "Pre-Trained Models",
@@ -2085,58 +2436,70 @@
                 {
                   "content": "AlexNet",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_355"
                 },
                 {
                   "content": "VGGNet",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_356"
                 },
                 {
                   "content": "ResNet",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_357"
                 },
                 {
                   "content": "Inception v3",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_358"
                 },
                 {
                   "content": "DesnseNet",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_359"
                 },
                 {
                   "content": "EffecientNet",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_360"
                 },
                 {
                   "content": "DarkNet",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_361"
                 },
                 {
                   "content": "TFLite",
                   "children": [],
-                  "branchColor": "#8d6e63"
+                  "branchColor": "#8d6e63",
+                  "id": "node_362"
                 },
                 {
                   "content": "local:img-1790393809739-cdd8eb6f46f76b24",
                   "children": [],
-                  "branchColor": "#e67e22"
+                  "branchColor": "#e67e22",
+                  "id": "node_363"
                 }
               ],
               "collapsed": true,
-              "branchColor": "#3498db"
+              "branchColor": "#3498db",
+              "id": "node_354"
             }
           ],
           "collapsed": true,
-          "branchColor": "#3498db"
+          "branchColor": "#3498db",
+          "id": "node_311"
         }
       ],
-      "branchColor": "#9b59b6"
+      "branchColor": "#9b59b6",
+      "id": "node_1"
     }
   }
 }
