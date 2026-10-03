@@ -942,7 +942,7 @@
     <div id="snackbar" style="display: none;"></div>
 <script>
 window.addEventListener('load', () => {
-    if (!localStorage.getItem('map_restored_v4')) {
+    if (!localStorage.getItem('map_restored_v5')) {
         fetch('./default_map.json')
             .then(r => r.json())
             .then(data => {
@@ -960,7 +960,7 @@ window.addEventListener('load', () => {
                         id: mapId
                     });
                     localStorage.setItem('mindmap-history', JSON.stringify(history));
-                    localStorage.setItem('map_restored_v4', 'true');
+                    localStorage.setItem('map_restored_v5', 'true');
                     // Navigate to the map
                     window.location.href = window.location.pathname + '?id=' + mapId;
                 }
