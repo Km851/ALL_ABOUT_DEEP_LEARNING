@@ -1775,8 +1775,8 @@ function updateSignUpButton() {
 		if (__mmwEnginePromise) return __mmwEnginePromise;
 		__mmwEnsureEngineDom();
 
-		__mmwEnginePromise = __mmwLoadScript('/scripts/mm-rendering/renderer.js')
-			.then(() => __mmwLoadScript('/scripts/mm-rendering/interaction.js'))
+		__mmwEnginePromise = __mmwLoadScript('./scripts/mm-rendering/renderer.js')
+			.then(() => __mmwLoadScript('./scripts/mm-rendering/interaction.js'))
 			.then(() => {
 				try {
 					if (!window.__mmwEngineBooted) {
@@ -3666,7 +3666,7 @@ async function shareMindmap() {
 				return;
 			}
 
-			const existingScript = document.querySelector('script[src="/scripts/libraries/qrcode.min.js"]');
+			const existingScript = document.querySelector('script[src="./scripts/libraries/qrcode.min.js"]');
 			if (existingScript) {
 				existingScript.onload = resolve;
 				existingScript.onerror = reject;
@@ -3674,7 +3674,7 @@ async function shareMindmap() {
 			}
 
 			const script = document.createElement('script');
-			script.src = '/scripts/libraries/qrcode.min.js';
+			script.src = './scripts/libraries/qrcode.min.js';
 			script.onload = resolve;
 			script.onerror = () => reject(new Error('Failed to load QR code library'));
 			document.head.appendChild(script);
@@ -4443,7 +4443,7 @@ const DownloadHandler = {
 
 	async loadWatermarkSVG() {
 		try {
-			const response = await fetch('/img/mmw-watermark.svg');
+			const response = await fetch('./img/mmw-watermark.svg');
 			if (!response.ok) {
 				throw new Error('Failed to load watermark');
 			}
@@ -5428,3 +5428,4 @@ document.addEventListener('DOMContentLoaded', () => {
         window.chatManager = new window.ChatManager();
     }
 });
+

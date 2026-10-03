@@ -174,8 +174,8 @@
         if (__mmwEnginePromise) return __mmwEnginePromise;
         window.__mmwEnsureEngineDom();
 
-        __mmwEnginePromise = window.__mmwLoadScript('/scripts/mm-rendering/renderer.js')
-            .then(() => window.__mmwLoadScript('/scripts/mm-rendering/interaction.js'))
+        __mmwEnginePromise = window.__mmwLoadScript('./scripts/mm-rendering/renderer.js')
+            .then(() => window.__mmwLoadScript('./scripts/mm-rendering/interaction.js'))
             .then(() => {
                 try {
                     if (!window.__mmwEngineBooted) {
@@ -194,3 +194,4 @@
         return __mmwEnginePromise;
     };
 })();
+
