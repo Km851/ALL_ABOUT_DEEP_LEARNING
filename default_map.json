@@ -169,679 +169,269 @@
                       "content": "Defining",
                       "children": [
                         {
-                          "content": "data = [100 , 102, 104]\nseries = pd.Series(data)\nprint(series)",
+                          "content": "data = [100 , 102, 104]\nseries = pd.Series(data)\nprint(series)\n# 0    100\n# 1    102\n# 2    104\n# dtype: int64",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Changing Indexing",
+                      "children": [
+                        {
+                          "content": "series1 = pd.Series(data , index =[\"a\",\"b\",\"c\"])\nprint(series1)\n# a    100\n# b    102\n# c    104\n# dtype: int64",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "seaching value using index/key ( loc )",
+                      "children": [
+                        {
+                          "content": "print( series1.loc[\"c\"])\n#104",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "seaching value using index/key ( iloc )",
+                      "children": [
+                        {
+                          "content": "series1.loc[\"c\"]=200\nprint( series1.iloc[2])",
                           "children": []
                         }
                       ]
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "0    100",
-          "children": []
-        },
-        {
-          "content": "1    102",
-          "children": []
-        },
-        {
-          "content": "2    104",
-          "children": []
-        },
-        {
-          "content": "dtype: int64",
-          "children": [
-            {
-              "content": "Changing Indexing",
-              "children": [
+                },
                 {
-                  "content": "series1 = pd.Series(data , index =[\"a\",\"b\",\"c\"])\nprint(series1)",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "a    100",
-          "children": []
-        },
-        {
-          "content": "b    102",
-          "children": []
-        },
-        {
-          "content": "c    104",
-          "children": []
-        },
-        {
-          "content": "dtype: int64",
-          "children": [
-            {
-              "content": "seaching value using index/key ( loc )",
-              "children": [
-                {
-                  "content": "print( series1.loc[\"c\"])\n#104",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "seaching value using index/key ( iloc )",
-              "children": [
-                {
-                  "content": "series1.loc[\"c\"]=200\nprint( series1.iloc[2])",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "DataFrames",
-              "children": [
-                {
-                  "content": "Defining",
+                  "content": "DataFrames",
                   "children": [
                     {
-                      "content": "data = { \"Name\": [\"spongebob\", \"Patrick\", \"squidward\"],\n         \"Age\": [30, 35, 50]\n}\n\ndf = pd.DataFrame(data)\nprint(df)",
-                      "children": []
+                      "content": "Defining",
+                      "children": [
+                        {
+                          "content": "data = { \"Name\": [\"spongebob\", \"Patrick\", \"squidward\"],\n         \"Age\": [30, 35, 50]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\n#         Name  Age\n# 0  spongebob   30\n# 1    Patrick   35\n# 2  squidward   50",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Changing Index",
+                      "children": [
+                        {
+                          "content": "df = pd.DataFrame(data, index=[\"Employee 1\", \"Employee 2\", \"Employee 3\"])\nprint(df)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Shape",
+                      "children": [
+                        {
+                          "content": "print(df.shape)\n# (3, 2)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "First n rows ( head() )",
+                      "children": [
+                        {
+                          "content": "print(df.head())\n#                  Name  Age\n# Employee 1  spongebob   30\n# Employee 2    Patrick   35\n# Employee 3  squidward   50",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Specific Element",
+                      "children": [
+                        {
+                          "content": "print(df['Age'][\"Employee 1\"])\n# 30",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "seaching value using index/key ( iloc )",
+                      "children": [
+                        {
+                          "content": "print(df.iloc[0])\n# Name    spongebob\n# Age            30\n# Name: Employee 1, dtype: object\n\nprint(df.iloc[:, 0])\n# Employee 1    spongebob\n# Employee 2      Patrick\n# Employee 3    squidward\n# Name: Name, dtype: str",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Set a Specific Column to be the Index of the DataFrame",
+                      "children": [
+                        {
+                          "content": "df = df.set_index(\"Age\")\nprint(df)\n#Age   Name           \n#30   spongebob\n#35     Patrick\n#50   squidwarddf = df.set_index(\"Age\")",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Conditional statements",
+                      "children": [
+                        {
+                          "content": "print(df.Name == \"spongebob\")\n# Employee 1     True\n# Employee 2    False\n# Employee 3    False\n# Name: Name, dtype: bool\n\n\nprint(df.loc[df.Name == \"spongebob\"])\n#                  Name  Age\n# Employee 1  spongebob   30\n\n\nprint(df.loc[(df.Name == \"spongebob\") & (df.Age >= 25)])\n#                  Name  Age\n# Employee 1  spongebob   30",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "isin()",
+                      "children": [
+                        {
+                          "content": "# isin() - checking if values exist in a list\nprint(df.loc[df.Name.isin([\"spongebob\", \"Patrick\"])])\n#                  Name  Age\n# Employee 1  spongebob   30\n# Employee 2    Patrick   35",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Revering Values",
+                      "children": [
+                        {
+                          "content": "df[\"Age\"] = range(len(df), 0, -1)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Reading CSV File",
+                      "children": [
+                        {
+                          "content": "pd.read_csv(\"file_location.csv\")",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Statistical Info",
+                      "children": [
+                        {
+                          "content": "# Statistical info\nprint(df[\"Age\"].describe())\n# count      3.000000\n# mean      38.333333\n# std       10.408330\n# min       30.000000\n# 25%       32.500000\n# 50%       35.000000\n# 75%       42.500000\n# max       50.000000\n# Name: Age, dtype: float64\n\n# Specifically print a statistical method's result\nprint(df[\"Age\"].mean())\n# 38.333333333333336\n\n# Finding the index of the max value\nprint(df['Age'].idxmax())\n# Employee 3",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Unique",
+                      "children": [
+                        {
+                          "content": "# Unique items in a column\nprint(df[\"Name\"].unique())\n# <StringArray>\n# ['spongebob', 'Patrick', 'squidward']\n# Length: 3, dtype: str\n\n\n# To see unique values and how often they occur in the dataset\nprint(df[\"Name\"].value_counts())\n# Name\n# spongebob    1\n# Patrick      1\n# squidward    1\n# Name: count, dtype: int64",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Lambda\n\n> # map() returns a new Series where all the values have been transformed by your function.\n> # apply() is the equivalent method if we want to transform a whole DataFrame by calling a custom method on each row/column.",
+                      "children": [
+                        {
+                          "content": "remean = df['Age'].mean()\nprint(df['Age'].map(lambda p: p - remean))\n# Employee 1    -8.333333\n# Employee 2    -3.333333\n# Employee 3    11.666667\n# Name: Age, dtype: float64",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "apply()",
+                      "children": [
+                        {
+                          "content": "remean = df['Age'].mean()\ndef remean_apply(row):\n      row['Age'] = row['Age'] - remean\n      return row\n\nprint(df.apply(remean_apply, axis='columns'))\n#                        Name        Age\n# Employee 1  spongebob  -8.333333\n# Employee 2    Patrick  -3.333333\n# Employee 3  squidward  11.666667",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Sting Operation",
+                      "children": [
+                        {
+                          "content": "# String operation\nprint(df['Name'] + \" - \" + df['Age'].astype(str))\n# Employee 1    spongebob - 30\n# Employee 2      Patrick - 35\n# Employee 3    squidward - 50\n# dtype: str",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Replicating value_counts using groupby",
+                      "children": [
+                        {
+                          "content": "print(df.groupby('Age')['Age'].count())\n# Age\n# 30    1\n# 35    1\n# 50    1\n# Name: Age, dtype: int64",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "DataTypes",
+                      "children": [
+                        {
+                          "content": "print(df.dtypes)\n# Name      str\n# Age     int64\n# dtype: object",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Type Conversion",
+                      "children": [
+                        {
+                          "content": "df.Age = df.Age.astype('float64')\nprint(df)\n#                  Name   Age\n# Employee 1  spongebob  30.0\n# Employee 2    Patrick  35.0\n# Employee 3  squidward  50.0",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Retrieve all NaN Values",
+                      "children": [
+                        {
+                          "content": "# df.loc['Employee 1', 'Age'] = np.nan\nprint(df[pd.isnull(df.Age)])",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Replacing Specific Values",
+                      "children": [
+                        {
+                          "content": "# Replacing specific values\ndf.Name.replace(\"old\", \"new\")\n\n# Renaming column headings\nprint(df.rename(columns={'Age': 'Age in years'}))\n#                  Name  Age in years\n# Employee 1  spongebob          30.0\n# Employee 2    Patrick          35.0\n# Employee 3  squidward          50.0\n\n\n# Renaming indexes\nprint(df.rename(index={'Employee 1': 'firstEntry', 'Employee 2': 'SecondEntry'}))\n#                    Name   Age\n# firstEntry    spongebob  30.0\n# SecondEntry     Patrick  35.0\n# Employee 3    squidward  50.0\n\n\n# Renaming the axis titles\nprint(df.rename_axis(\"Info\", axis='rows').rename_axis(\"Sr no.\", axis='columns'))\n# Sr no.            Name   Age\n# Info                       \n# Employee 1  spongebob  30.0\n# Employee 2    Patrick  35.0\n# Employee 3  squidward  50.0",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Concat",
+                      "children": [
+                        {
+                          "content": "# Concat (Combines different DataFrames vertically or horizontally)\npd.concat([df1, df2])",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Merge",
+                      "children": [
+                        {
+                          "content": "# Join / Merge (Combines DataFrames side-by-side based on a common column)\npd.merge(df1, df2, on='common_column_name', how='inner')",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Deleteing MIssing Values",
+                      "children": [
+                        {
+                          "content": "# Dropping missing values\ndf = df.dropna(axis=0)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Choosing Features",
+                      "children": [
+                        {
+                          "content": "# Choosing features (typically for Machine Learning)\ndf_features = ['Age']\nX = df[df_features]",
+                          "children": []
+                        }
+                      ]
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name  Age",
-          "children": []
-        },
-        {
-          "content": "0  spongebob   30",
-          "children": []
-        },
-        {
-          "content": "1    Patrick   35",
-          "children": []
-        },
-        {
-          "content": "2  squidward   50",
-          "children": [
-            {
-              "content": "Changing Index",
-              "children": [
-                {
-                  "content": "df = pd.DataFrame(data, index=[\"Employee 1\", \"Employee 2\", \"Employee 3\"])\nprint(df)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Shape",
-              "children": [
-                {
-                  "content": "print(df.shape)",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "(3, 2)",
-          "children": [
-            {
-              "content": "First n rows ( head() )",
-              "children": [
-                {
-                  "content": "print(df.head())",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name  Age",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob   30",
-          "children": []
-        },
-        {
-          "content": "Employee 2    Patrick   35",
-          "children": []
-        },
-        {
-          "content": "Employee 3  squidward   50",
-          "children": [
-            {
-              "content": "Specific Element",
-              "children": [
-                {
-                  "content": "print(df['Age'][\"Employee 1\"])",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "30",
-          "children": [
-            {
-              "content": "seaching value using index/key ( iloc )",
-              "children": [
-                {
-                  "content": "print(df.iloc[0])",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name    spongebob",
-          "children": []
-        },
-        {
-          "content": "Age            30",
-          "children": []
-        },
-        {
-          "content": "Name: Employee 1, dtype: object",
-          "children": []
-        },
-        {
-          "content": "Employee 1    spongebob",
-          "children": []
-        },
-        {
-          "content": "Employee 2      Patrick",
-          "children": []
-        },
-        {
-          "content": "Employee 3    squidward",
-          "children": []
-        },
-        {
-          "content": "Name: Name, dtype: str",
-          "children": [
-            {
-              "content": "Set a Specific Column to be the Index of the DataFrame",
-              "children": [
-                {
-                  "content": "df = df.set_index(\"Age\")\nprint(df)\n#Age   Name           \n#30   spongebob\n#35     Patrick\n#50   squidwarddf = df.set_index(\"Age\")",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Conditional statements",
-              "children": [
-                {
-                  "content": "print(df.Name == \"spongebob\")",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Employee 1     True",
-          "children": []
-        },
-        {
-          "content": "Employee 2    False",
-          "children": []
-        },
-        {
-          "content": "Employee 3    False",
-          "children": []
-        },
-        {
-          "content": "Name: Name, dtype: bool",
-          "children": []
-        },
-        {
-          "content": "Name  Age",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob   30",
-          "children": []
-        },
-        {
-          "content": "Name  Age",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob   30",
-          "children": [
-            {
-              "content": "isin()",
-              "children": [
-                {
-                  "content": "# isin() - checking if values exist in a list\nprint(df.loc[df.Name.isin([\"spongebob\", \"Patrick\"])])",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name  Age",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob   30",
-          "children": []
-        },
-        {
-          "content": "Employee 2    Patrick   35",
-          "children": [
-            {
-              "content": "Revering Values",
-              "children": [
-                {
-                  "content": "df[\"Age\"] = range(len(df), 0, -1)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Reading CSV File",
-              "children": [
-                {
-                  "content": "pd.read_csv(\"file_location.csv\")",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Statistical Info",
-              "children": [
-                {
-                  "content": "# Statistical info\nprint(df[\"Age\"].describe())",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "count      3.000000",
-          "children": []
-        },
-        {
-          "content": "mean      38.333333",
-          "children": []
-        },
-        {
-          "content": "std       10.408330",
-          "children": []
-        },
-        {
-          "content": "min       30.000000",
-          "children": []
-        },
-        {
-          "content": "25%       32.500000",
-          "children": []
-        },
-        {
-          "content": "50%       35.000000",
-          "children": []
-        },
-        {
-          "content": "75%       42.500000",
-          "children": []
-        },
-        {
-          "content": "max       50.000000",
-          "children": []
-        },
-        {
-          "content": "Name: Age, dtype: float64",
-          "children": []
-        },
-        {
-          "content": "Specifically print a statistical method's result",
-          "children": []
-        },
-        {
-          "content": "38.333333333333336",
-          "children": []
-        },
-        {
-          "content": "Finding the index of the max value",
-          "children": []
-        },
-        {
-          "content": "Employee 3",
-          "children": [
-            {
-              "content": "Unique",
-              "children": [
-                {
-                  "content": "# Unique items in a column\nprint(df[\"Name\"].unique())",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "<StringArray>",
-          "children": []
-        },
-        {
-          "content": "['spongebob', 'Patrick', 'squidward']",
-          "children": []
-        },
-        {
-          "content": "Length: 3, dtype: str",
-          "children": []
-        },
-        {
-          "content": "To see unique values and how often they occur in the dataset",
-          "children": []
-        },
-        {
-          "content": "Name",
-          "children": []
-        },
-        {
-          "content": "spongebob    1",
-          "children": []
-        },
-        {
-          "content": "Patrick      1",
-          "children": []
-        },
-        {
-          "content": "squidward    1",
-          "children": []
-        },
-        {
-          "content": "Name: count, dtype: int64",
-          "children": [
-            {
-              "content": "Lambda\n\n> # map() returns a new Series where all the values have been transformed by your function.\n> # apply() is the equivalent method if we want to transform a whole DataFrame by calling a custom method on each row/column.",
-              "children": [
-                {
-                  "content": "remean = df['Age'].mean()\nprint(df['Age'].map(lambda p: p - remean))",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Employee 1    -8.333333",
-          "children": []
-        },
-        {
-          "content": "Employee 2    -3.333333",
-          "children": []
-        },
-        {
-          "content": "Employee 3    11.666667",
-          "children": []
-        },
-        {
-          "content": "Name: Age, dtype: float64",
-          "children": [
-            {
-              "content": "apply()",
-              "children": [
-                {
-                  "content": "remean = df['Age'].mean()\ndef remean_apply(row):\n      row['Age'] = row['Age'] - remean\n      return row\n\nprint(df.apply(remean_apply, axis='columns'))",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name        Age",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob  -8.333333",
-          "children": []
-        },
-        {
-          "content": "Employee 2    Patrick  -3.333333",
-          "children": []
-        },
-        {
-          "content": "Employee 3  squidward  11.666667",
-          "children": [
-            {
-              "content": "Sting Operation",
-              "children": [
-                {
-                  "content": "# String operation\nprint(df['Name'] + \" - \" + df['Age'].astype(str))",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Employee 1    spongebob - 30",
-          "children": []
-        },
-        {
-          "content": "Employee 2      Patrick - 35",
-          "children": []
-        },
-        {
-          "content": "Employee 3    squidward - 50",
-          "children": []
-        },
-        {
-          "content": "dtype: str",
-          "children": [
-            {
-              "content": "Replicating value_counts using groupby",
-              "children": [
-                {
-                  "content": "print(df.groupby('Age')['Age'].count())",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Age",
-          "children": []
-        },
-        {
-          "content": "30    1",
-          "children": []
-        },
-        {
-          "content": "35    1",
-          "children": []
-        },
-        {
-          "content": "50    1",
-          "children": []
-        },
-        {
-          "content": "Name: Age, dtype: int64",
-          "children": [
-            {
-              "content": "DataTypes",
-              "children": [
-                {
-                  "content": "print(df.dtypes)",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name      str",
-          "children": []
-        },
-        {
-          "content": "Age     int64",
-          "children": []
-        },
-        {
-          "content": "dtype: object",
-          "children": [
-            {
-              "content": "Type Conversion",
-              "children": [
-                {
-                  "content": "df.Age = df.Age.astype('float64')\nprint(df)",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Name   Age",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob  30.0",
-          "children": []
-        },
-        {
-          "content": "Employee 2    Patrick  35.0",
-          "children": []
-        },
-        {
-          "content": "Employee 3  squidward  50.0",
-          "children": [
-            {
-              "content": "Retrieve all NaN Values",
-              "children": [
-                {
-                  "content": "# df.loc['Employee 1', 'Age'] = np.nan\nprint(df[pd.isnull(df.Age)])",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Replacing Specific Values",
-              "children": [
-                {
-                  "content": "# Replacing specific values\ndf.Name.replace(\"old\", \"new\")",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Renaming column headings",
-          "children": []
-        },
-        {
-          "content": "Name  Age in years",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob          30.0",
-          "children": []
-        },
-        {
-          "content": "Employee 2    Patrick          35.0",
-          "children": []
-        },
-        {
-          "content": "Employee 3  squidward          50.0",
-          "children": []
-        },
-        {
-          "content": "Renaming indexes",
-          "children": []
-        },
-        {
-          "content": "Name   Age",
-          "children": []
-        },
-        {
-          "content": "firstEntry    spongebob  30.0",
-          "children": []
-        },
-        {
-          "content": "SecondEntry     Patrick  35.0",
-          "children": []
-        },
-        {
-          "content": "Employee 3    squidward  50.0",
-          "children": []
-        },
-        {
-          "content": "Renaming the axis titles",
-          "children": []
-        },
-        {
-          "content": "Sr no.            Name   Age",
-          "children": []
-        },
-        {
-          "content": "Info",
-          "children": []
-        },
-        {
-          "content": "Employee 1  spongebob  30.0",
-          "children": []
-        },
-        {
-          "content": "Employee 2    Patrick  35.0",
-          "children": []
-        },
-        {
-          "content": "Employee 3  squidward  50.0",
-          "children": [
-            {
-              "content": "Concat",
-              "children": [
-                {
-                  "content": "# Concat (Combines different DataFrames vertically or horizontally)\npd.concat([df1, df2])",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Merge",
-              "children": [
-                {
-                  "content": "# Join / Merge (Combines DataFrames side-by-side based on a common column)\npd.merge(df1, df2, on='common_column_name', how='inner')",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Deleteing MIssing Values",
-              "children": [
-                {
-                  "content": "# Dropping missing values\ndf = df.dropna(axis=0)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Choosing Features",
-              "children": [
-                {
-                  "content": "# Choosing features (typically for Machine Learning)\ndf_features = ['Age']\nX = df[df_features]",
-                  "children": []
                 }
               ]
             },
@@ -865,418 +455,152 @@
                   "content": "Loading the Model",
                   "children": [
                     {
-                      "content": "melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Loading a dataframe",
-          "children": [
-            {
-              "content": "Single Tree Model",
-              "children": [
-                {
-                  "content": "melbourne_model = DecisionTreeRegressor(random_state=1)",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Fit model",
-          "children": [
-            {
-              "content": "Train/Test Split",
-              "children": [
-                {
-                  "content": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2 , random_state=42)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Standard Scalar",
-              "children": [
-                {
-                  "content": "scaler = StandardScaler()X_train_p= scaler.fit_transform(X_train)X_test_p = scaler.transform(X_test)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Overfitting VS underfitting",
-              "children": [
-                {
-                  "content": "#function to get MAE of various models\ndef get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):\n    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)\n    model.fit(train_X, train_y)\n    preds_val = model.predict(val_X)\n    mae = mean_absolute_error(val_y, preds_val)\n    return mae",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Compare MAE with differing values of max leaf mode , 5= high MAE = underfitting , 5000= high MAE = overfitting , 500= perfect model",
-          "children": [
-            {
-              "content": "Random Forest",
-              "children": [
-                {
-                  "content": "forest_model = RandomForestRegressor(random_state=1)\nforest_model.fit(train_X, train_y)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Missing values",
-              "children": [
-                {
-                  "content": "# Print columns with missing values\n\n#series of all columns with count of missing values\nmissing_val_count_by_column = (X_train.isnull().sum())\n#using the series to find columns with atleast1 missng values \nprint(missing_val_count_by_column[missing_val_count_by_column > 0])\n\n#list of column with atleast 1 missng values\ncols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]",
-                  "children": []
-                },
-                {
-                  "content": "Drop",
-                  "children": [
-                    {
-                      "content": "reduced_X_train = X_train.drop(cols_with_missing, axis=1)\nreduced_X_valid = X_valid.drop(cols_with_missing, axis=1)",
+                      "content": "melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'\n\n# Loading a dataframe\nmelbourne_data = pd.read_csv(melbourne_file_path)",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "content": "Impute",
+                  "content": "Single Tree Model",
                   "children": [
                     {
-                      "content": "my_imputer = SimpleImputer() imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train)) imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid)) imputed_X_train.columns = X_train.columns imputed_X_valid.columns = X_valid.columns",
+                      "content": "melbourne_model = DecisionTreeRegressor(random_state=1)\n\n# Fit model\nmelbourne_model.fit(X, y)",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "content": "Extended Impute",
+                  "content": "Train/Test Split",
                   "children": [
                     {
-                      "content": "X_train_plus = X_train.copy()\nX_valid_plus = X_valid.copy()\nfor col in cols_with_missing:\n    X_train_plus[col + '_was_missing'] = X_train_plus[col].isnull()\n    X_valid_plus[col + '_was_missing'] = X_valid_plus[col].isnull()\n\nmy_imputer = SimpleImputer()\n\nimputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train_plus))\nimputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid_plus))\n\nimputed_X_train.columns = X_train_plus.columns\nimputed_X_valid.columns = X_valid_plus.columns",
+                      "content": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2 , random_state=42)",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "content": "Pipelines and columns tranformer",
+                  "content": "Standard Scalar",
                   "children": [
                     {
-                      "content": "# ColumnTransformer class to bundle together different preprocessing steps",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Preprocessing for numerical data",
-          "children": []
-        },
-        {
-          "content": "Preprocessing for categorical data",
-          "children": []
-        },
-        {
-          "content": "Bundle preprocessing for numerical and categorical data",
-          "children": []
-        },
-        {
-          "content": "(Note: numerical_cols and categorical_cols need to be defined in your script)",
-          "children": []
-        },
-        {
-          "content": "Define the model",
-          "children": []
-        },
-        {
-          "content": "Bundle preprocessing and modeling code in a pipeline",
-          "children": [
-            {
-              "content": "Cross Validation",
-              "children": [
-                {
-                  "content": "# Multiply by -1 since sklearn calculates negative MAE\nscores = -1 * cross_val_score(my_pipeline, X,y,cv=5,scoring='neg_mean_absolute_error')\nprint(\"MAE scores:\\n\", scores)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Gradient Boosting",
-              "children": [
-                {
-                  "content": "my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=4)\nmy_model.fit(X_train, y_train,  \n             early_stopping_rounds=5, \n             eval_set=[(X_valid, y_valid)], \n             verbose=False)",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Data leakage",
-              "children": [
-                {
-                  "content": "# There are two main types of leakage: target leakage and train-test contamination.\n#",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "content": "Target leakage:",
-          "children": []
-        },
-        {
-          "content": "Occurs when your predictors include data that will not be available at the time you make predictions.",
-          "children": []
-        },
-        {
-          "content": "To prevent this type of data leakage, any variable updated (or created) after the target value is realized should be excluded.",
-          "children": []
-        },
-        {
-          "content": "Train-Test Contamination:",
-          "children": []
-        },
-        {
-          "content": "A different type of leak occurs when you aren't careful to distinguish training data from validation data.",
-          "children": [
-            {
-              "content": "extractind column with specific datatypes from a dataframe",
-              "children": [
-                {
-                  "content": "numeric_cols = X_train.select_dtypes(include=['int64','float64']).columns.tolist()",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Confusion Matrics",
-              "children": [
-                {
-                  "content": "y_pred = np.argmax(model.predict(X_test_p), axis=1)\n\nfrom sklearn.metrics import confusion_matrix\nimport seaborn as sns\ncm = confusion_matrix(y_test, y_pred)\nsns.heatmap(cm, annot=True, fmt='d')",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "plotting",
-              "children": [
-                {
-                  "content": "history=Trained_model.history\n\nimport matplotlib.pyplot as plt\nplt.plot( history['loss'] , label='train')\nplt.plot( history['val_loss'] , label='validation')\nplt.ylabel('loss')\nplt.xlabel('epoch')\nplt.show()",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Fundamentals of Deep learning",
-              "children": [
-                {
-                  "content": "ML VS DL",
-                  "children": [
-                    {
-                      "content": "local:img-1790047137573-beea8fe484369cd1",
+                      "content": "scaler = StandardScaler()X_train_p= scaler.fit_transform(X_train)X_test_p = scaler.transform(X_test)",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "content": "DL defination",
+                  "content": "Overfitting VS underfitting",
                   "children": [
                     {
-                      "content": "Deep learning is a specialized subfield of machine learning and artificial intelligence (AI) utilizing deep artificial neural networks (ANNs) containing multiple hidden layers to automatically extract high-level feature representations from unstructured data.",
+                      "content": "#function to get MAE of various models\ndef get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):\n    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)\n    model.fit(train_X, train_y)\n    preds_val = model.predict(val_X)\n    mae = mean_absolute_error(val_y, preds_val)\n    return mae\n\n# Compare MAE with differing values of max leaf mode , 5= high MAE = underfitting , 5000= high MAE = overfitting , 500= perfect model\nfor max_leaf_nodes in [5, 50, 500, 5000]:\n    my_mae = get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y)\n    print(\"Max leaf nodes: %d  \\t\\t Mean Absolute Error:  %d\" % (max_leaf_nodes, my_mae))",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "content": "Neural Network",
+                  "content": "Random Forest",
                   "children": [
                     {
-                      "content": "Perceptron",
+                      "content": "forest_model = RandomForestRegressor(random_state=1)\nforest_model.fit(train_X, train_y)",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Missing values",
+                  "children": [
+                    {
+                      "content": "# Print columns with missing values\n\n#series of all columns with count of missing values\nmissing_val_count_by_column = (X_train.isnull().sum())\n#using the series to find columns with atleast1 missng values \nprint(missing_val_count_by_column[missing_val_count_by_column > 0])\n\n#list of column with atleast 1 missng values\ncols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]",
+                      "children": []
+                    },
+                    {
+                      "content": "Drop",
                       "children": [
                         {
-                          "content": "local:img-1790047931893-ee798507668c8fa2",
+                          "content": "reduced_X_train = X_train.drop(cols_with_missing, axis=1)\nreduced_X_valid = X_valid.drop(cols_with_missing, axis=1)",
                           "children": []
                         }
                       ]
                     },
                     {
-                      "content": "Layers",
+                      "content": "Impute",
                       "children": [
                         {
-                          "content": "Input Layers",
-                          "children": [
-                            {
-                              "content": "It's the entry point for raw data.  the number of nodes exactly matches the number of features in your dataset.",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Hiddeen Layers",
-                          "children": []
-                        },
-                        {
-                          "content": "Output Layers",
-                          "children": [
-                            {
-                              "content": "The final layer that produces the model's prediction\nactivation function for hidden layer just before the output layer is decided on the basis of task :-\n1) Regression (Predicting a value): A single node with a linear (or no) activation function\n2) Binary Classification (Yes/No): A single node using a Sigmoid activation function to output a probability between 0 and 1.\n3) Multi-class Classification: Multiple nodes (one for each class) using a SoftMax activation function to output a probability distribution across all possible categories.",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Weights and bias",
-                      "children": [
-                        {
-                          "content": "each connection from one perceptron to another has some kind of weight showing how closely related the 2 perceptron's are to each other\nWeights are used to shift the line , Bias is used to determine the slope",
-                          "children": []
-                        },
-                        {
-                          "content": "local:img-1790052092700-b0547e27f32e135b",
+                          "content": "my_imputer = SimpleImputer() imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train)) imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid)) imputed_X_train.columns = X_train.columns imputed_X_valid.columns = X_valid.columns",
                           "children": []
                         }
                       ]
                     },
                     {
-                      "content": "Types",
+                      "content": "Extended Impute",
                       "children": [
                         {
-                          "content": "Shallow NN",
-                          "children": [
-                            {
-                              "content": "Neural network with 1 or less hidden layers",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Deep NN",
-                          "children": [
-                            {
-                              "content": "Neural network with 2 or more hidden layers",
-                              "children": []
-                            }
-                          ]
+                          "content": "X_train_plus = X_train.copy()\nX_valid_plus = X_valid.copy()\nfor col in cols_with_missing:\n    X_train_plus[col + '_was_missing'] = X_train_plus[col].isnull()\n    X_valid_plus[col + '_was_missing'] = X_valid_plus[col].isnull()\n\nmy_imputer = SimpleImputer()\n\nimputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train_plus))\nimputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid_plus))\n\nimputed_X_train.columns = X_train_plus.columns\nimputed_X_valid.columns = X_valid_plus.columns",
+                          "children": []
                         }
                       ]
                     },
                     {
-                      "content": "Types according to Functions",
+                      "content": "Pipelines and columns tranformer",
                       "children": [
                         {
-                          "content": "ANN",
+                          "content": "# ColumnTransformer class to bundle together different preprocessing steps\n\n# Preprocessing for numerical data\nnumerical_transformer = SimpleImputer(strategy='constant')\ndf[['your_column_name']] = numerical_transformer.fit_transform(df[['your_column_name']])\n\n# Preprocessing for categorical data\ncategorical_transformer = Pipeline(steps=[\n    ('imputer', SimpleImputer(strategy='most_frequent')),\n    ('onehot', OneHotEncoder(handle_unknown='ignore'))\n])\ndf[['your_column_name']] = categorical_transformer.fit_transform(df[['your_column_name']])\n\n# Bundle preprocessing for numerical and categorical data\n# (Note: numerical_cols and categorical_cols need to be defined in your script)\npreprocessor = ColumnTransformer(\n    transformers=[\n        ('num', numerical_transformer, numerical_cols), \n        ('cat', categorical_transformer, categorical_cols)\n    ])\n\n# Define the model\nmodel = RandomForestRegressor(n_estimators=100, random_state=0)\n\n# Bundle preprocessing and modeling code in a pipeline\nmy_pipeline = Pipeline(steps=[\n    ('preprocessor', preprocessor),\n    ('model', model)\n])",
                           "children": []
-                        },
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Cross Validation",
+                      "children": [
                         {
-                          "content": "CNN",
-                          "children": [
-                            {
-                              "content": "The Convolutional Neural Networks or CNNs are primarily used for tasks related to computer vision or image processing.",
-                              "children": []
-                            }
-                          ]
-                        },
+                          "content": "# Multiply by -1 since sklearn calculates negative MAE\nscores = -1 * cross_val_score(my_pipeline, X,y,cv=5,scoring='neg_mean_absolute_error')\nprint(\"MAE scores:\\n\", scores)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Gradient Boosting",
+                      "children": [
                         {
-                          "content": "RNN",
-                          "children": [
-                            {
-                              "content": "The Recurrent Neural Networks or RNN are primarily used to model sequential data, such as text, audio, or any type of data that represents sequence or time.",
-                              "children": []
-                            }
-                          ]
-                        },
+                          "content": "my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=4)\nmy_model.fit(X_train, y_train,  \n             early_stopping_rounds=5, \n             eval_set=[(X_valid, y_valid)], \n             verbose=False)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Data leakage",
+                      "children": [
                         {
-                          "content": "GAN",
-                          "children": [
-                            {
-                              "content": "This type of network essentially learns the structure of the data, and patterns\nin a way that it can be used to generate new examples, similar to that of the original dataset.",
-                              "children": []
-                            }
-                          ]
+                          "content": "# There are two main types of leakage: target leakage and train-test contamination.\n#\n# Target leakage:\n# Occurs when your predictors include data that will not be available at the time you make predictions.\n# To prevent this type of data leakage, any variable updated (or created) after the target value is realized should be excluded.\n#\n# Train-Test Contamination:\n# A different type of leak occurs when you aren't careful to distinguish training data from validation data.",
+                          "children": []
                         }
                       ]
                     }
                   ]
                 },
                 {
-                  "content": "Trainng",
+                  "content": "extractind column with specific datatypes from a dataframe",
                   "children": [
                     {
-                      "content": "Parameter control",
-                      "children": [
-                        {
-                          "content": "Leraning rate",
-                          "children": [
-                            {
-                              "content": "local:img-1790091386536-480f79548dd5341e",
-                              "children": []
-                            },
-                            {
-                              "content": "Constant LR",
-                              "children": []
-                            },
-                            {
-                              "content": "Time decay",
-                              "children": []
-                            },
-                            {
-                              "content": "Step based decay",
-                              "children": []
-                            },
-                            {
-                              "content": "Exponential decay",
-                              "children": []
-                            },
-                            {
-                              "content": "Custom LR",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
-                    },
+                      "content": "numeric_cols = X_train.select_dtypes(include=['int64','float64']).columns.tolist()",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Confusion Matrics",
+                  "children": [
                     {
-                      "content": "loops",
-                      "children": [
-                        {
-                          "content": "Batch\n\n> A distinct subset of the training dataset processed by a neural network during a single operational cycle which is forward propagation , loss , backward propagation and parameter update.",
-                          "children": [
-                            {
-                              "content": "Imports",
-                              "children": []
-                            },
-                            {
-                              "content": "Defining an Input and Output Layer",
-                              "children": []
-                            },
-                            {
-                              "content": "Scaling the Data",
-                              "children": []
-                            },
-                            {
-                              "content": "Forward propogation",
-                              "children": []
-                            },
-                            {
-                              "content": "Loss calculation\n- MAE\n- MSE\n- local:img-1790091785595-3923fa15b7795176\n- Binary Cross Entropy\n- # Cross-entropy is a sort of measure for the distance from one probability distribution to another.",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
+                      "content": "y_pred = np.argmax(model.predict(X_test_p), axis=1)\n\nfrom sklearn.metrics import confusion_matrix\nimport seaborn as sns\ncm = confusion_matrix(y_test, y_pred)\nsns.heatmap(cm, annot=True, fmt='d')",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "plotting",
+                  "children": [
+                    {
+                      "content": "history=Trained_model.history\n\nimport matplotlib.pyplot as plt\nplt.plot( history['loss'] , label='train')\nplt.plot( history['val_loss'] , label='validation')\nplt.ylabel('loss')\nplt.xlabel('epoch')\nplt.show()",
+                      "children": []
                     }
                   ]
                 }
@@ -1285,26 +609,226 @@
           ]
         },
         {
-          "content": "Activation function: the sigmoid activation.",
+          "content": "Fundamentals of Deep learning",
           "children": [
             {
-              "content": "Back propogation\n- local:img-1790092088253-51c9975a8b3d5f10",
-              "children": []
-            },
-            {
-              "content": "Parameter update\n- Complexity of the model depends on no. of parameters and it's training , which is controlled by the change in weights and bias combined called as parameters .\n- Issues\n- Vanishing gradient\n- ● As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.\n● In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.",
-              "children": []
-            },
-            {
-              "content": "Plot Curve",
-              "children": []
-            },
-            {
-              "content": "Epoch",
+              "content": "ML VS DL",
               "children": [
                 {
-                  "content": "One complete pass of the entire dataset through the neural network",
+                  "content": "local:img-1790047137573-beea8fe484369cd1",
                   "children": []
+                }
+              ]
+            },
+            {
+              "content": "DL defination",
+              "children": [
+                {
+                  "content": "Deep learning is a specialized subfield of machine learning and artificial intelligence (AI) utilizing deep artificial neural networks (ANNs) containing multiple hidden layers to automatically extract high-level feature representations from unstructured data.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "content": "Neural Network",
+              "children": [
+                {
+                  "content": "Perceptron",
+                  "children": [
+                    {
+                      "content": "local:img-1790047931893-ee798507668c8fa2",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Layers",
+                  "children": [
+                    {
+                      "content": "Input Layers",
+                      "children": [
+                        {
+                          "content": "It's the entry point for raw data.  the number of nodes exactly matches the number of features in your dataset.",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Hiddeen Layers",
+                      "children": []
+                    },
+                    {
+                      "content": "Output Layers",
+                      "children": [
+                        {
+                          "content": "The final layer that produces the model's prediction\nactivation function for hidden layer just before the output layer is decided on the basis of task :-\n1) Regression (Predicting a value): A single node with a linear (or no) activation function\n2) Binary Classification (Yes/No): A single node using a Sigmoid activation function to output a probability between 0 and 1.\n3) Multi-class Classification: Multiple nodes (one for each class) using a SoftMax activation function to output a probability distribution across all possible categories.",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "Weights and bias",
+                  "children": [
+                    {
+                      "content": "each connection from one perceptron to another has some kind of weight showing how closely related the 2 perceptron's are to each other\nWeights are used to shift the line , Bias is used to determine the slope",
+                      "children": []
+                    },
+                    {
+                      "content": "local:img-1790052092700-b0547e27f32e135b",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Types",
+                  "children": [
+                    {
+                      "content": "Shallow NN",
+                      "children": [
+                        {
+                          "content": "Neural network with 1 or less hidden layers",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Deep NN",
+                      "children": [
+                        {
+                          "content": "Neural network with 2 or more hidden layers",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "Types according to Functions",
+                  "children": [
+                    {
+                      "content": "ANN",
+                      "children": []
+                    },
+                    {
+                      "content": "CNN",
+                      "children": [
+                        {
+                          "content": "The Convolutional Neural Networks or CNNs are primarily used for tasks related to computer vision or image processing.",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "RNN",
+                      "children": [
+                        {
+                          "content": "The Recurrent Neural Networks or RNN are primarily used to model sequential data, such as text, audio, or any type of data that represents sequence or time.",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "GAN",
+                      "children": [
+                        {
+                          "content": "This type of network essentially learns the structure of the data, and patterns\nin a way that it can be used to generate new examples, similar to that of the original dataset.",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "Trainng",
+              "children": [
+                {
+                  "content": "Parameter control",
+                  "children": [
+                    {
+                      "content": "Leraning rate",
+                      "children": [
+                        {
+                          "content": "local:img-1790091386536-480f79548dd5341e",
+                          "children": []
+                        },
+                        {
+                          "content": "Constant LR",
+                          "children": []
+                        },
+                        {
+                          "content": "Time decay",
+                          "children": []
+                        },
+                        {
+                          "content": "Step based decay",
+                          "children": []
+                        },
+                        {
+                          "content": "Exponential decay",
+                          "children": []
+                        },
+                        {
+                          "content": "Custom LR",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "loops",
+                  "children": [
+                    {
+                      "content": "Batch\n\n> A distinct subset of the training dataset processed by a neural network during a single operational cycle which is forward propagation , loss , backward propagation and parameter update.",
+                      "children": [
+                        {
+                          "content": "Imports",
+                          "children": []
+                        },
+                        {
+                          "content": "Defining an Input and Output Layer",
+                          "children": []
+                        },
+                        {
+                          "content": "Scaling the Data",
+                          "children": []
+                        },
+                        {
+                          "content": "Forward propogation",
+                          "children": []
+                        },
+                        {
+                          "content": "Loss calculation\n- MAE\n- MSE\n- local:img-1790091785595-3923fa15b7795176\n- Binary Cross Entropy\n- # Cross-entropy is a sort of measure for the distance from one probability distribution to another.\n# Activation function: the sigmoid activation.\n- local:img-1790091876784-50a40517875c2f4d\n- Categorical Cross Entropy\n- local:img-1790091915519-dcd9edfa34177b47",
+                          "children": []
+                        },
+                        {
+                          "content": "Back propogation\n- local:img-1790092088253-51c9975a8b3d5f10",
+                          "children": []
+                        },
+                        {
+                          "content": "Parameter update\n- Complexity of the model depends on no. of parameters and it's training , which is controlled by the change in weights and bias combined called as parameters .\n- Issues\n- Vanishing gradient\n- ● As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.\n● In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.",
+                          "children": []
+                        },
+                        {
+                          "content": "Plot Curve",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Epoch",
+                      "children": [
+                        {
+                          "content": "One complete pass of the entire dataset through the neural network",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             },
@@ -1393,39 +917,30 @@
                       "content": "Dropout",
                       "children": [
                         {
-                          "content": "# We randomly drop out some fraction of a layer's input units every step of training.",
+                          "content": "# We randomly drop out some fraction of a layer's input units every step of training.\n# Making it much harder for the network to learn those spurious patterns in the training data.\n# Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.",
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "content": "Early Stopping",
+                      "children": []
+                    },
+                    {
+                      "content": "Data Augmentation",
+                      "children": []
+                    },
+                    {
+                      "content": "Simplify The Model",
+                      "children": []
+                    },
+                    {
+                      "content": "local:img-1790093002894-dfa710694bff5724",
+                      "children": []
                     }
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "content": "Making it much harder for the network to learn those spurious patterns in the training data.",
-          "children": []
-        },
-        {
-          "content": "Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.",
-          "children": [
-            {
-              "content": "Early Stopping",
-              "children": []
-            },
-            {
-              "content": "Data Augmentation",
-              "children": []
-            },
-            {
-              "content": "Simplify The Model",
-              "children": []
-            },
-            {
-              "content": "local:img-1790093002894-dfa710694bff5724",
-              "children": []
             },
             {
               "content": "Applications",
@@ -1481,7 +996,61 @@
                   "content": "Model HIdden layer",
                   "children": [
                     {
-                      "content": "model = keras.Sequential([",
+                      "content": "model = keras.Sequential([\n     # the hidden ReLU layers\n     layers.Dense(units=4, activation='relu', input_shape=[2]),\n     layers.Dropout(rate=0.3)\n     layers.Dense(units=3, activation='relu'),\n     # the linear output layer \n     layers.Dense(units=1),\n ])",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "compile",
+                  "children": [
+                    {
+                      "content": "model.compile(\n    optimizer=optimizer=keras.optimizers.Adam(learning_rate=lr),\n    loss='mae',\n   metrics=['binary_accuracy']\n)",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "fit",
+                  "children": [
+                    {
+                      "content": "model.fit(X_train_p , y_train , epochs=100 , batch_size=16 , callbacks=[EarlyStopping(patience=10 , restore_best_weights=True)] ,validation_split=0.2 )",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "scaling 0 to 1",
+                  "children": [
+                    {
+                      "content": "from sklearn.preprocessing import MinMaxScaler\n\nscaler = MinMaxScaler()\ntrain_scaled = scaler.fit_transform(train_df[['meantemp']])\ntest_scaled = scaler.transform(test_df[['meantemp']])",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Predict",
+                  "children": [
+                    {
+                      "content": "print(\"First 5 houses features:\\n\", X.head())\nprint(\"The predictions are:\\n\", melbourne_model.predict(X.head()))",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "MAE Value",
+                  "children": [
+                    {
+                      "content": "predicted_home_prices = melbourne_model.predict(X)\nprint(\"In-Sample MAE:\", mean_absolute_error(y, predicted_home_prices))",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Manual Epoch",
+                  "children": [
+                    {
+                      "content": "with tf.GradientTape() as tape:\n     preds = model(X)                                                  \n# forward propagation        \nloss = tf.reduce_mean(            tf.keras.losses.sparse_categorical_crossentropy(y, preds))   \n# loss calculation\n  grads=tape.gradient(loss,model.trainable_variables)                \n# backpropagation    model.optimizer.apply_gradients(zip(grads, model.trainable_variables))  \n# parameter update",
                       "children": []
                     }
                   ]
@@ -1491,62 +1060,126 @@
           ]
         },
         {
-          "content": "the hidden ReLU layers",
-          "children": []
-        },
-        {
-          "content": "the linear output layer",
+          "content": "Activation functions",
           "children": [
             {
-              "content": "compile",
+              "content": "Categories",
               "children": [
                 {
-                  "content": "model.compile(\n    optimizer=optimizer=keras.optimizers.Adam(learning_rate=lr),\n    loss='mae',\n   metrics=['binary_accuracy']\n)",
+                  "content": "Binary Step Function",
                   "children": []
+                },
+                {
+                  "content": "Linear Step Function",
+                  "children": []
+                },
+                {
+                  "content": "Non-linear Activation Functions",
+                  "children": [
+                    {
+                      "content": "Sigmoid",
+                      "children": [
+                        {
+                          "content": "It is a differentiable activation function means it can be used for gradient Descent. ( good for probabilities)\nSuffers form Vanishing Gradient\nOutput Range ➖ Binary - 0 or 1\nf(x)=1/(1+e^(-x))",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393103817-225faf5ce9b0aab0",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Tanh",
+                      "children": [
+                        {
+                          "content": "It is Zero centered Means can be used for Gradient Descent\nOutput range ➖[ -1    1 ]\nf(x)={e^x-e^(-x)}/{e^x+e^(-x)}",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393223254-d926b16f9fe22215",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Relu",
+                      "children": [
+                        {
+                          "content": "It’s main advantage is that it avoids and rectifies vanishing gradient problem and less computationally expensive than tanh and sigmoid.\nf(x)=max(0,x)",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393277278-e7987caa9b7aa84b",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393283701-dc39cc888cd156fc",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Softmax",
+                      "children": [
+                        {
+                          "content": "It is used when output is categorical\nit calculates the possibility of target class over all target classes\nsoftmax(z_i)={exp(z_i)}/{\\sum_j exp(z_j)}",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393441404-d3b743f1fdc7d1fe",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Swish",
+                      "children": [
+                        {
+                          "content": "Inspired by Sigmoid Function , Used for Gating in LSTM and Highway Networks",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393540176-297957c0cc932c72",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Maxout",
+                      "children": [
+                        {
+                          "content": "Generalization of ReLU and LeakyReLU ,it’s a learnable activation function.\nmax(w^T_1+b_1 , w^t_2+b_2)",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Softplus",
+                      "children": [
+                        {
+                          "content": "smother version of ReLU\nf(x)=ln(1+exp x)",
+                          "children": []
+                        },
+                        {
+                          "content": "local:img-1790393637806-8a5e3d373e266f7f",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "local:img-1790393472497-d23c9b03e3593205",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             },
             {
-              "content": "fit",
+              "content": "Choosing Activation Functions",
               "children": [
                 {
-                  "content": "model.fit(X_train_p , y_train , epochs=100 , batch_size=16 , callbacks=[EarlyStopping(patience=10 , restore_best_weights=True)] ,validation_split=0.2 )",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "scaling 0 to 1",
-              "children": [
-                {
-                  "content": "from sklearn.preprocessing import MinMaxScaler\n\nscaler = MinMaxScaler()\ntrain_scaled = scaler.fit_transform(train_df[['meantemp']])\ntest_scaled = scaler.transform(test_df[['meantemp']])",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Predict",
-              "children": [
-                {
-                  "content": "print(\"First 5 houses features:\\n\", X.head())\nprint(\"The predictions are:\\n\", melbourne_model.predict(X.head()))",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "MAE Value",
-              "children": [
-                {
-                  "content": "predicted_home_prices = melbourne_model.predict(X)\nprint(\"In-Sample MAE:\", mean_absolute_error(y, predicted_home_prices))",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "content": "Manual Epoch",
-              "children": [
-                {
-                  "content": "with tf.GradientTape() as tape:\n     preds = model(X)                                                  ",
+                  "content": "local:img-1790393499824-a742c78b4f96aa8b",
                   "children": []
                 }
               ]
@@ -1554,130 +1187,77 @@
           ]
         },
         {
-          "content": "forward propagation",
-          "children": []
-        },
-        {
-          "content": "loss calculation",
-          "children": []
-        },
-        {
-          "content": "backpropagation    model.optimizer.apply_gradients(zip(grads, model.trainable_variables))",
-          "children": []
-        },
-        {
-          "content": "parameter update",
+          "content": "Recureent Nural Network ( RNN ) and Long Short-Tem Memory (LSTM)",
           "children": [
             {
-              "content": "Activation functions",
+              "content": "RNN",
               "children": [
                 {
-                  "content": "Categories",
+                  "content": "Designed to handle sequential data by maintaining a hidden state ( memory) that captures information from previous time steps.",
+                  "children": []
+                },
+                {
+                  "content": "RNN Equations",
                   "children": [
                     {
-                      "content": "Binary Step Function",
+                      "content": "local:img-1790449747108-08f92c0bbbb06956",
                       "children": []
-                    },
+                    }
+                  ]
+                },
+                {
+                  "content": "RNN Representation",
+                  "children": [
                     {
-                      "content": "Linear Step Function",
+                      "content": "local:img-1790449795875-e6be65195a5f0e9e",
                       "children": []
-                    },
+                    }
+                  ]
+                },
+                {
+                  "content": "Types of RNN Outputs",
+                  "children": [
                     {
-                      "content": "Non-linear Activation Functions",
+                      "content": "One to One",
                       "children": [
                         {
-                          "content": "Sigmoid",
-                          "children": [
-                            {
-                              "content": "It is a differentiable activation function means it can be used for gradient Descent. ( good for probabilities)\nSuffers form Vanishing Gradient\nOutput Range ➖ Binary - 0 or 1\nf(x)=1/(1+e^(-x))",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393103817-225faf5ce9b0aab0",
-                              "children": []
-                            }
-                          ]
-                        },
+                          "content": "Used for Binary Classification",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Many to One",
+                      "children": [
                         {
-                          "content": "Tanh",
-                          "children": [
-                            {
-                              "content": "It is Zero centered Means can be used for Gradient Descent\nOutput range ➖[ -1    1 ]\nf(x)={e^x-e^(-x)}/{e^x+e^(-x)}",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393223254-d926b16f9fe22215",
-                              "children": []
-                            }
-                          ]
-                        },
+                          "content": "Used for Sentiment Classification",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "One to Many",
+                      "children": [
                         {
-                          "content": "Relu",
-                          "children": [
-                            {
-                              "content": "It’s main advantage is that it avoids and rectifies vanishing gradient problem and less computationally expensive than tanh and sigmoid.\nf(x)=max(0,x)",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393277278-e7987caa9b7aa84b",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393283701-dc39cc888cd156fc",
-                              "children": []
-                            }
-                          ]
-                        },
+                          "content": "Image Captioning",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Many to Many ( Encoder - Decoder )",
+                      "children": [
                         {
-                          "content": "Softmax",
-                          "children": [
-                            {
-                              "content": "It is used when output is categorical\nit calculates the possibility of target class over all target classes\nsoftmax(z_i)={exp(z_i)}/{\\sum_j exp(z_j)}",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393441404-d3b743f1fdc7d1fe",
-                              "children": []
-                            }
-                          ]
-                        },
+                          "content": "Language Translation",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Many to Many ( Synchronized )",
+                      "children": [
                         {
-                          "content": "Swish",
-                          "children": [
-                            {
-                              "content": "Inspired by Sigmoid Function , Used for Gating in LSTM and Highway Networks",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393540176-297957c0cc932c72",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Maxout",
-                          "children": [
-                            {
-                              "content": "Generalization of ReLU and LeakyReLU ,it’s a learnable activation function.\nmax(w^T_1+b_1 , w^t_2+b_2)",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Softplus",
-                          "children": [
-                            {
-                              "content": "smother version of ReLU\nf(x)=ln(1+exp x)",
-                              "children": []
-                            },
-                            {
-                              "content": "local:img-1790393637806-8a5e3d373e266f7f",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "local:img-1790393472497-d23c9b03e3593205",
+                          "content": "POS Tagging",
                           "children": []
                         }
                       ]
@@ -1685,10 +1265,72 @@
                   ]
                 },
                 {
-                  "content": "Choosing Activation Functions",
+                  "content": "Activation Functions",
                   "children": [
                     {
-                      "content": "local:img-1790393499824-a742c78b4f96aa8b",
+                      "content": "Tanh",
+                      "children": [
+                        {
+                          "content": "Most Common in RNN",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "ReLU",
+                      "children": [
+                        {
+                          "content": "Fatser but can be less stable",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "content": "Sigmoid",
+                      "children": [
+                        {
+                          "content": "Usefull for gate and outputs",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "Vanishing Gradient",
+                  "children": [
+                    {
+                      "content": "Gradients Become too small as tehy flow back ( model forgets long term info)",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Exploding Gradients",
+                  "children": [
+                    {
+                      "content": "Gradients Grow too large as they flow back ( model becomes unstable )",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Drawbacks of RNN",
+                  "children": [
+                    {
+                      "content": "RNN suffers from memory loss",
+                      "children": []
+                    },
+                    {
+                      "content": "Suffers from Vanishing Gradeint",
+                      "children": []
+                    },
+                    {
+                      "content": "Difficult Training",
+                      "children": []
+                    },
+                    {
+                      "content": "BPTT",
                       "children": []
                     }
                   ]
@@ -1696,226 +1338,195 @@
               ]
             },
             {
-              "content": "Recureent Nural Network ( RNN ) and Long Short-Tem Memory (LSTM)",
+              "content": "LSTM",
               "children": [
                 {
-                  "content": "RNN",
+                  "content": "A type of RNN model designed to prevent the output of a neural network form either exploding or decaying",
+                  "children": []
+                },
+                {
+                  "content": "Activation functions",
                   "children": [
                     {
-                      "content": "Designed to handle sequential data by maintaining a hidden state ( memory) that captures information from previous time steps.",
+                      "content": "Tanh",
                       "children": []
                     },
                     {
-                      "content": "RNN Equations",
-                      "children": [
-                        {
-                          "content": "local:img-1790449747108-08f92c0bbbb06956",
-                          "children": []
-                        }
-                      ]
-                    },
+                      "content": "Sigmoid",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "local:img-1790451390375-20b386de33e7a7ac",
+                  "children": []
+                },
+                {
+                  "content": "CODES",
+                  "children": [
                     {
-                      "content": "RNN Representation",
+                      "content": "sequential",
                       "children": [
                         {
-                          "content": "local:img-1790449795875-e6be65195a5f0e9e",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Types of RNN Outputs",
-                      "children": [
-                        {
-                          "content": "One to One",
-                          "children": [
-                            {
-                              "content": "Used for Binary Classification",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Many to One",
-                          "children": [
-                            {
-                              "content": "Used for Sentiment Classification",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "One to Many",
-                          "children": [
-                            {
-                              "content": "Image Captioning",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Many to Many ( Encoder - Decoder )",
-                          "children": [
-                            {
-                              "content": "Language Translation",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Many to Many ( Synchronized )",
-                          "children": [
-                            {
-                              "content": "POS Tagging",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Activation Functions",
-                      "children": [
-                        {
-                          "content": "Tanh",
-                          "children": [
-                            {
-                              "content": "Most Common in RNN",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "ReLU",
-                          "children": [
-                            {
-                              "content": "Fatser but can be less stable",
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "content": "Sigmoid",
-                          "children": [
-                            {
-                              "content": "Usefull for gate and outputs",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Vanishing Gradient",
-                      "children": [
-                        {
-                          "content": "Gradients Become too small as tehy flow back ( model forgets long term info)",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Exploding Gradients",
-                      "children": [
-                        {
-                          "content": "Gradients Grow too large as they flow back ( model becomes unstable )",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Drawbacks of RNN",
-                      "children": [
-                        {
-                          "content": "RNN suffers from memory loss",
-                          "children": []
-                        },
-                        {
-                          "content": "Suffers from Vanishing Gradeint",
-                          "children": []
-                        },
-                        {
-                          "content": "Difficult Training",
-                          "children": []
-                        },
-                        {
-                          "content": "BPTT",
+                          "content": "model = keras.Sequential([    layers.LSTM(50, input_shape=(30, 1)),    layers.Dense(1)])",
                           "children": []
                         }
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "content": "local:img-1790450800882-2943872cde5c49e9",
+              "children": []
+            }
+          ]
+        },
+        {
+          "content": "Convolutional Neural Network ( CNN )",
+          "children": [
+            {
+              "content": "Why CNN?",
+              "children": [
                 {
-                  "content": "LSTM",
+                  "content": "Limitations of ANN",
                   "children": [
                     {
-                      "content": "A type of RNN model designed to prevent the output of a neural network form either exploding or decaying",
+                      "content": "Location-shift Sensitivity",
                       "children": []
                     },
                     {
-                      "content": "Activation functions",
-                      "children": [
-                        {
-                          "content": "Tanh",
-                          "children": []
-                        },
-                        {
-                          "content": "Sigmoid",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "local:img-1790451390375-20b386de33e7a7ac",
+                      "content": "Computationally Expensive",
                       "children": []
-                    },
-                    {
-                      "content": "CODES",
-                      "children": [
-                        {
-                          "content": "sequential",
-                          "children": [
-                            {
-                              "content": "model = keras.Sequential([    layers.LSTM(50, input_shape=(30, 1)),    layers.Dense(1)])",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
                     }
                   ]
                 },
                 {
-                  "content": "local:img-1790450800882-2943872cde5c49e9",
+                  "content": "Convolution",
+                  "children": [
+                    {
+                      "content": "Convolution is a Mathematical operation where two functions are blended together to produce a third function . It actually measures how much one function overlaps with another .\nIn Deep Learning Small Matrices and Big Matrices roll together to form a single new value, which helps the computer detect patterns like edges, curves, or textures.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "Image Processing",
+              "children": [
+                {
+                  "content": "Resizing",
+                  "children": []
+                },
+                {
+                  "content": "Normalization",
+                  "children": []
+                },
+                {
+                  "content": "Data Augmentation",
                   "children": []
                 }
               ]
             },
             {
-              "content": "Convolutional Neural Network ( CNN )",
+              "content": "CNN architecture",
               "children": [
                 {
-                  "content": "Why CNN?",
+                  "content": "Filters / Kernels",
+                  "children": []
+                },
+                {
+                  "content": "Stride",
                   "children": [
                     {
-                      "content": "Limitations of ANN",
+                      "content": "How many cells the filter is moved",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Padding",
+                  "children": [
+                    {
+                      "content": "It allows us to use a CONV layer without necessarily shrinking the height and width of the volumes.\nIt helps us keep more of the information at the border of an image.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Output Dimension Formula",
+                  "children": [
+                    {
+                      "content": "n=height of current layer\nf=Spatial size of filter\np=padding\ns=stride\nl=the current layer you are calculating\nl -1=the previous layer.",
+                      "children": []
+                    },
+                    {
+                      "content": "local:img-1790393948104-c1abb04588ced3b4",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Convolution on Volume",
+                  "children": [
+                    {
+                      "content": "local:img-1790394030823-1629d651e0087884",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Multiple Filters",
+                  "children": [
+                    {
+                      "content": "local:img-1790394049896-71908f1a88fc13d7",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "1×1 Convolution",
+                  "children": [
+                    {
+                      "content": "local:img-1790394069055-3ca96543aa67f113",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "content": "Pooling Layers",
+                  "children": [
+                    {
+                      "content": "Reducing the size of the representations to make some of the features it detects a bit more robust.\n\nit has hyper-parameters:\n\nbut it doesn’t have parameter; there’s nothing for gradient descent to learn",
+                      "children": []
+                    },
+                    {
+                      "content": "Max polling",
+                      "children": []
+                    },
+                    {
+                      "content": "AVG Polling",
+                      "children": []
+                    },
+                    {
+                      "content": "local:img-1790394202090-5a7d876cac78ce3e",
+                      "children": []
+                    },
+                    {
+                      "content": "Hyper-Parameters",
                       "children": [
                         {
-                          "content": "Location-shift Sensitivity",
+                          "content": "Size",
                           "children": []
                         },
                         {
-                          "content": "Computationally Expensive",
+                          "content": "Stride",
                           "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Convolution",
-                      "children": [
+                        },
                         {
-                          "content": "Convolution is a Mathematical operation where two functions are blended together to produce a third function . It actually measures how much one function overlaps with another .\nIn Deep Learning Small Matrices and Big Matrices roll together to form a single new value, which helps the computer detect patterns like edges, curves, or textures.",
+                          "content": "Type",
                           "children": []
                         }
                       ]
@@ -1923,203 +1534,81 @@
                   ]
                 },
                 {
-                  "content": "Image Processing",
+                  "content": "Batch Normalization layer",
                   "children": [
                     {
-                      "content": "Resizing",
-                      "children": []
-                    },
-                    {
-                      "content": "Normalization",
-                      "children": []
-                    },
-                    {
-                      "content": "Data Augmentation",
+                      "content": "To normalize inputs between layers. could be used before or after the activation function layer",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "content": "CNN architecture",
+                  "content": "Dropout Layer",
                   "children": [
                     {
-                      "content": "Filters / Kernels",
+                      "content": "Drop out a fraction of neurons from a layer.",
                       "children": []
-                    },
-                    {
-                      "content": "Stride",
-                      "children": [
-                        {
-                          "content": "How many cells the filter is moved",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Padding",
-                      "children": [
-                        {
-                          "content": "It allows us to use a CONV layer without necessarily shrinking the height and width of the volumes.\nIt helps us keep more of the information at the border of an image.",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Output Dimension Formula",
-                      "children": [
-                        {
-                          "content": "n=height of current layer\nf=Spatial size of filter\np=padding\ns=stride\nl=the current layer you are calculating\nl -1=the previous layer.",
-                          "children": []
-                        },
-                        {
-                          "content": "local:img-1790393948104-c1abb04588ced3b4",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Convolution on Volume",
-                      "children": [
-                        {
-                          "content": "local:img-1790394030823-1629d651e0087884",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Multiple Filters",
-                      "children": [
-                        {
-                          "content": "local:img-1790394049896-71908f1a88fc13d7",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "1×1 Convolution",
-                      "children": [
-                        {
-                          "content": "local:img-1790394069055-3ca96543aa67f113",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Pooling Layers",
-                      "children": [
-                        {
-                          "content": "Reducing the size of the representations to make some of the features it detects a bit more robust.\n\nit has hyper-parameters:\n\nbut it doesn’t have parameter; there’s nothing for gradient descent to learn",
-                          "children": []
-                        },
-                        {
-                          "content": "Max polling",
-                          "children": []
-                        },
-                        {
-                          "content": "AVG Polling",
-                          "children": []
-                        },
-                        {
-                          "content": "local:img-1790394202090-5a7d876cac78ce3e",
-                          "children": []
-                        },
-                        {
-                          "content": "Hyper-Parameters",
-                          "children": [
-                            {
-                              "content": "Size",
-                              "children": []
-                            },
-                            {
-                              "content": "Stride",
-                              "children": []
-                            },
-                            {
-                              "content": "Type",
-                              "children": []
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Batch Normalization layer",
-                      "children": [
-                        {
-                          "content": "To normalize inputs between layers. could be used before or after the activation function layer",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Dropout Layer",
-                      "children": [
-                        {
-                          "content": "Drop out a fraction of neurons from a layer.",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Flatten Layer",
-                      "children": [
-                        {
-                          "content": "To convert multi-dimensional convolutional blocks into 1-D vectors",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "content": "Fully Connected Layer",
-                      "children": [
-                        {
-                          "content": "To process the flattened image data and carry out the classification.",
-                          "children": []
-                        }
-                      ]
                     }
                   ]
                 },
                 {
-                  "content": "Pre-Trained Models",
+                  "content": "Flatten Layer",
                   "children": [
                     {
-                      "content": "AlexNet",
-                      "children": []
-                    },
-                    {
-                      "content": "VGGNet",
-                      "children": []
-                    },
-                    {
-                      "content": "ResNet",
-                      "children": []
-                    },
-                    {
-                      "content": "Inception v3",
-                      "children": []
-                    },
-                    {
-                      "content": "DesnseNet",
-                      "children": []
-                    },
-                    {
-                      "content": "EffecientNet",
-                      "children": []
-                    },
-                    {
-                      "content": "DarkNet",
-                      "children": []
-                    },
-                    {
-                      "content": "TFLite",
-                      "children": []
-                    },
-                    {
-                      "content": "local:img-1790393809739-cdd8eb6f46f76b24",
+                      "content": "To convert multi-dimensional convolutional blocks into 1-D vectors",
                       "children": []
                     }
                   ]
+                },
+                {
+                  "content": "Fully Connected Layer",
+                  "children": [
+                    {
+                      "content": "To process the flattened image data and carry out the classification.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "Pre-Trained Models",
+              "children": [
+                {
+                  "content": "AlexNet",
+                  "children": []
+                },
+                {
+                  "content": "VGGNet",
+                  "children": []
+                },
+                {
+                  "content": "ResNet",
+                  "children": []
+                },
+                {
+                  "content": "Inception v3",
+                  "children": []
+                },
+                {
+                  "content": "DesnseNet",
+                  "children": []
+                },
+                {
+                  "content": "EffecientNet",
+                  "children": []
+                },
+                {
+                  "content": "DarkNet",
+                  "children": []
+                },
+                {
+                  "content": "TFLite",
+                  "children": []
+                },
+                {
+                  "content": "local:img-1790393809739-cdd8eb6f46f76b24",
+                  "children": []
                 }
               ]
             }
