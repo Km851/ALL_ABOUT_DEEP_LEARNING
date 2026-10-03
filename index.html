@@ -940,7 +940,27 @@
         </div>
     </div>
     <div id="snackbar" style="display: none;"></div>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        fetch('./default_map.md')
+            .then(r => {
+                if (!r.ok) throw new Error('Not found');
+                return r.text();
+            })
+            .then(md => {
+                if (window.renderMindmap && md && md.trim().length > 0) {
+                    window.renderMindmap(md, { playPopAnimation: true });
+                    const appDiv = document.getElementById('app');
+                    if (appDiv) appDiv.style.display = 'none';
+                }
+            })
+            .catch(e => console.log('Default map not loaded:', e));
+    }, 800);
+});
+</script>
 </body>
 
 </html>
+
 
