@@ -1,4 +1,4 @@
-function generateSVG(jsonString, options = {}) {
+﻿function generateSVG(jsonString, options = {}) {
     let nodeSpacing = 10;
     let levelSpacing = 80;
     const maxNodeWidth = 300;
@@ -341,6 +341,10 @@ function generateSVG(jsonString, options = {}) {
             imageSize: jsonNode.imageSize || null,
             checked: jsonNode.checked !== undefined ? jsonNode.checked : undefined
         };
+        // Normalize children: convert strings (from mindmapwizard exports) to empty arrays
+        if (jsonNode.children && !Array.isArray(jsonNode.children)) {
+            jsonNode.children = [];
+        }
         if (jsonNode.children && Array.isArray(jsonNode.children)) {
             jsonNode.children.forEach((childJson, index) => {
                 const childPathId = `${pathId}-${index}`;

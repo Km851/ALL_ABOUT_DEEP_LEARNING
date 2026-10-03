@@ -1,4 +1,4 @@
-{
+Ôªø{
     "id":  "3126909499.0",
     "topic":  "Untitled",
     "markdown":  "",
@@ -24,7 +24,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "import numpy as np",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -33,7 +33,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#Defining a 1-D array",
-                                                                                                                        "children":  "    "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -42,7 +42,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(a.shape)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -51,7 +51,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(a.ndim)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -60,7 +60,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(a.dtype)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -69,7 +69,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#size in bytes of each element",
-                                                                                                                        "children":  "    "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -78,7 +78,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print( d[1, -1] )",
-                                                                                                                        "children":  "  "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -87,7 +87,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#arrays filled with zeros",
-                                                                                                                        "children":  "        "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -96,7 +96,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(np.random.rand(4,2))",
-                                                                                                                        "children":  "   "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -105,7 +105,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(np.identity(5))",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -114,7 +114,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "arr = np.array([[1, 2],",
-                                                                                                                        "children":  "          "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -123,7 +123,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#The reference issue: changing \u0027h\u0027 also changes \u0027g\u0027",
-                                                                                                                        "children":  "          "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -132,7 +132,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#Math",
-                                                                                                                        "children":  "                                "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -141,7 +141,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#array manuipualtion",
-                                                                                                                        "children":  "                      "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -150,7 +150,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#importing",
-                                                                                                                        "children":  "               "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -164,7 +164,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "import pandas as pd",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -173,7 +173,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Defining",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -211,7 +211,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(series1)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -248,7 +248,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#104",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -262,7 +262,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print( series1.iloc[2])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -276,7 +276,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "data = { \"Name\": [\"spongebob\", \"Patrick\", \"squidward\"],",
-                                                                                                                        "children":  "   "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -313,7 +313,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -450,23 +450,23 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "#Age   Name",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "#30   spongebob",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "#35     Patrick",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "#50   squidwarddf = df.set_index(\"Age\")",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -548,7 +548,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df.loc[df.Name.isin([\"spongebob\", \"Patrick\"])])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -601,7 +601,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df[\"Age\"].describe())",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -702,7 +702,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df[\"Name\"].unique())",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -786,7 +786,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df[\u0027Age\u0027].map(lambda p: p - remean))",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -823,19 +823,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "def remean_apply(row):",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "row[\u0027Age\u0027] = row[\u0027Age\u0027] - remean",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "return row",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "print(df.apply(remean_apply, axis=\u0027columns\u0027))",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -872,7 +872,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df[\u0027Name\u0027] + \" - \" + df[\u0027Age\u0027].astype(str))",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -977,7 +977,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1014,7 +1014,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(df[pd.isnull(df.Age)])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1028,7 +1028,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "df.Name.replace(\"old\", \"new\")",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1152,7 +1152,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "pd.concat([df1, df2])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1166,7 +1166,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "pd.merge(df1, df2, on=\u0027common_column_name\u0027, how=\u0027inner\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1180,7 +1180,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "df = df.dropna(axis=0)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1194,11 +1194,11 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "df_features = [\u0027Age\u0027]",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "X = df[df_features]",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1218,7 +1218,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "from sklearn.metrics import confusion_matriximport seaborn as sns",
-                                                                                                                        "children":  "           "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1227,7 +1227,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "melbourne_file_path = \u0027../input/melbourne-housing-snapshot/melb_data.csv\u0027",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1296,27 +1296,27 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "model.fit(train_X, train_y)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "preds_val = model.predict(val_X)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "mae = mean_absolute_error(val_y, preds_val)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "return mae",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1353,7 +1353,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "forest_model.fit(train_X, train_y)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1367,27 +1367,27 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#series of all columns with count of missing values",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "missing_val_count_by_column = (X_train.isnull().sum())",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "#using the series to find columns with atleast1 missng values",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "print(missing_val_count_by_column[missing_val_count_by_column \u003e 0])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "#list of column with atleast 1 missng values",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "cols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1396,7 +1396,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "reduced_X_train = X_train.drop(cols_with_missing, axis=1)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1405,7 +1405,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "my_imputer = SimpleImputer() imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train)) imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid)) imputed_X_train.columns = X_train.columns imputed_X_valid.columns = X_valid.columns",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1414,7 +1414,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "X_train_plus = X_train.copy()",
-                                                                                                                        "children":  "        "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1423,7 +1423,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "# ColumnTransformer class to bundle together different preprocessing steps",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1570,11 +1570,11 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "scores = -1 * cross_val_score(my_pipeline, X,y,cv=5,scoring=\u0027neg_mean_absolute_error\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "print(\"MAE scores:\\n\", scores)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1588,19 +1588,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "my_model.fit(X_train, y_train,",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "early_stopping_rounds=5,",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "eval_set=[(X_valid, y_valid)],",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "verbose=False)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1614,7 +1614,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "#",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1674,19 +1674,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "from sklearn.metrics import confusion_matrix",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "import seaborn as sns",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "cm = confusion_matrix(y_test, y_pred)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "sns.heatmap(cm, annot=True, fmt=\u0027d\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1700,27 +1700,27 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "import matplotlib.pyplot as plt",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "plt.plot( history[\u0027loss\u0027] , label=\u0027train\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "plt.plot( history[\u0027val_loss\u0027] , label=\u0027validation\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "plt.ylabel(\u0027loss\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "plt.xlabel(\u0027epoch\u0027)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "plt.show()",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1734,7 +1734,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "local:img-1790047137573-beea8fe484369cd1",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1743,7 +1743,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Deep learning is a specialized subfield of machine learning and artificial intelligence (AI) utilizing deep artificial neural networks (ANNs) containing multiple hidden layers to automatically extract high-level feature representations from unstructured data.",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1752,25 +1752,25 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Perceptron",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Layers",
-                                                                                                                        "children":  "  "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Weights and bias",
-                                                                                                                        "children":  " ",
+                                                                                                                        "children":[],
                                                                                                                         "collapsed":  true
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Types",
-                                                                                                                        "children":  " ",
+                                                                                                                        "children":[],
                                                                                                                         "collapsed":  true
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Types according to Functions",
-                                                                                                                        "children":  "   ",
+                                                                                                                        "children":[],
                                                                                                                         "collapsed":  true
                                                                                                                     }
                                                                                                                 ]
@@ -1780,12 +1780,12 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Parameter control",
-                                                                                                                        "children":  "",
+                                                                                                                        "children":[],
                                                                                                                         "collapsed":  true
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "loops",
-                                                                                                                        "children":  "",
+                                                                                                                        "children":[],
                                                                                                                         "collapsed":  true
                                                                                                                     }
                                                                                                                 ]
@@ -1849,13 +1849,13 @@
                                                                                                                 ]
                                                                                                },
                                                                                                {
-                                                                                                   "content":  "‚?è As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.",
+                                                                                                   "content":  "ÔøΩ?ÔøΩ As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.",
                                                                                                    "children":  [
 
                                                                                                                 ]
                                                                                                },
                                                                                                {
-                                                                                                   "content":  "‚?è In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.",
+                                                                                                   "content":  "ÔøΩ?ÔøΩ In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.",
                                                                                                    "children":  [
 
                                                                                                                 ]
@@ -1899,19 +1899,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Batch GD",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Stochastic GD",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Mini-Batch GD",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Online GD",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1920,19 +1920,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "SGD (Vanilla)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Momentum",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "RMSProp",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Adam",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -1942,15 +1942,15 @@
                                                                               "content":  "Overfitting",
                                                                               "children":  [
                                                                                                {
-                                                                                                   "content":  "‚?è Overfitting describes the phenomenon of fitting the training data too closely, maybe with hypotheses that are too complex.",
+                                                                                                   "content":  "ÔøΩ?ÔøΩ Overfitting describes the phenomenon of fitting the training data too closely, maybe with hypotheses that are too complex.",
                                                                                                    "children":  [
                                                                                                                     {
-                                                                                                                        "content":  "‚?è In such a case, your learner ends up fitting the training data really well, but will perform much, much more poorly on real examples.",
-                                                                                                                        "children":  ""
+                                                                                                                        "content":  "ÔøΩ?ÔøΩ In such a case, your learner ends up fitting the training data really well, but will perform much, much more poorly on real examples.",
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "When a model is too eagerly learning noise, the validation loss may start to increase during training.",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -1965,19 +1965,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "L2 ( Ridge )",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "L1 ( Lasso )",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Batch Normalization",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Dropout",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2067,7 +2067,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "import pandas as pd",
-                                                                                                                        "children":  "  "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2076,7 +2076,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "w, b = model.weights",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2085,7 +2085,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "model = keras.Sequential([",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2139,19 +2139,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "optimizer=optimizer=keras.optimizers.Adam(learning_rate=lr),",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "loss=\u0027mae\u0027,",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "metrics=[\u0027binary_accuracy\u0027]",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  ")",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2176,15 +2176,15 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "scaler = MinMaxScaler()",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "train_scaled = scaler.fit_transform(train_df[[\u0027meantemp\u0027]])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "test_scaled = scaler.transform(test_df[[\u0027meantemp\u0027]])",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2198,7 +2198,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(\"The predictions are:\\n\", melbourne_model.predict(X.head()))",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2212,7 +2212,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "print(\"In-Sample MAE:\", mean_absolute_error(y, predicted_home_prices))",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2226,7 +2226,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "preds = model(X)",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2273,15 +2273,15 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Binary Step Function",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Linear Step Function",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Non-linear Activation Functions",
-                                                                                                                        "children":  "       "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2290,7 +2290,7 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "local:img-1790393499824-a742c78b4f96aa8b",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
@@ -2304,35 +2304,35 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Designed to handle sequential data by maintaining a hidden state ( memory) that captures information from previous time steps.",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "RNN Equations",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "RNN Representation",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Types of RNN Outputs",
-                                                                                                                        "children":  "    "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Activation Functions",
-                                                                                                                        "children":  "  "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Vanishing Gradient",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Exploding Gradients",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Drawbacks of RNN",
-                                                                                                                        "children":  "   "
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2341,19 +2341,19 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "A type of RNN model designed to prevent the output of a neural network form either exploding or decaying",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Activation functions",
-                                                                                                                        "children":  " "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "local:img-1790451390375-20b386de33e7a7ac",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "CODES",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2373,11 +2373,11 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Limitations of ANN",
-                                                                                                                        "children":  " "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Convolution",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2386,15 +2386,15 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Resizing",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Normalization",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Data Augmentation",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2403,51 +2403,51 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "Filters / Kernels",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Stride",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Padding",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Output Dimension Formula",
-                                                                                                                        "children":  " "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Convolution on Volume",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Multiple Filters",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
-                                                                                                                        "content":  "1√?1 Convolution",
-                                                                                                                        "children":  ""
+                                                                                                                        "content":  "1ÔøΩ?1 Convolution",
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Pooling Layers",
-                                                                                                                        "children":  "    "
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Batch Normalization layer",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Dropout Layer",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Flatten Layer",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Fully Connected Layer",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                },
@@ -2456,39 +2456,39 @@
                                                                                                    "children":  [
                                                                                                                     {
                                                                                                                         "content":  "AlexNet",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "VGGNet",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "ResNet",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "Inception v3",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "DesnseNet",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "EffecientNet",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "DarkNet",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "TFLite",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "content":  "local:img-1790393809739-cdd8eb6f46f76b24",
-                                                                                                                        "children":  ""
+                                                                                                                        "children":[]
                                                                                                                     }
                                                                                                                 ]
                                                                                                }
