@@ -942,6 +942,7 @@
     <div id="snackbar" style="display: none;"></div>
 <script>
 window.addEventListener('load', () => {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
     setTimeout(() => {
         fetch('./default_map.md')
             .then(r => {
@@ -962,5 +963,6 @@ window.addEventListener('load', () => {
 </body>
 
 </html>
+
 
 
