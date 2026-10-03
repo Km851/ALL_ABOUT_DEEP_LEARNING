@@ -2499,7 +2499,8 @@
         }
       ],
       "branchColor": "#9b59b6",
-      "id": "node_1"
+      "id": "node_1",
+      "collapsed": true
     }
   }
 }
