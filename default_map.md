@@ -51,7 +51,7 @@ print(np.full((2,2),99))
 print(np.full_like(a,4))
 #### Random
 ##### print(np.random.rand(4,2))
- 
+
 #randdom decimal with the same shape as a
 print(np.random.random_sample(a.shape))
 
@@ -62,7 +62,7 @@ print(np.random.randint(-4,8,size=(3,3)))
 #### Repeat
 ##### arr = np.array([[1, 2],
                 [3, 4]])
-                
+
 print(np.repeat(arr, 2, axis=0))
 [[1, 2],
  [1, 2],  
@@ -76,7 +76,7 @@ print(np.repeat(arr, 2, axis=1))
 print(np.repeat(arr, 2))
 [1, 1, 2, 2, 3, 3, 4, 4]
 #### Refrence VS Copy
-##### #The reference issue: changing 'h' also changes 'g' 
+##### #The reference issue: changing 'h' also changes 'g'
 g=np.array([1,2,3])
 h=g
 h[0] = 100
@@ -282,7 +282,7 @@ print(df.loc[df.Name.isin(["spongebob", "Patrick"])])
 ##### Reading CSV File
 ###### pd.read_csv("file_location.csv")
 ##### Statistical Info
-###### # Statistical info 
+###### # Statistical info
 print(df["Age"].describe())
 # count      3.000000
 # mean      38.333333
@@ -331,7 +331,7 @@ print(df['Age'].map(lambda p: p - remean))
 def remean_apply(row):
       row['Age'] = row['Age'] - remean
       return row
-      
+
 print(df.apply(remean_apply, axis='columns'))
 #                        Name        Age
 # Employee 1  spongebob  -8.333333
@@ -550,26 +550,51 @@ plt.xlabel('epoch')
 plt.show()
 ## Fundamentals of Deep learning
 ### ML VS DL
-#### local:img-1790047137573-beea8fe484369cd1
+#### local:img-1794833678610-7d3d41a84d636403
 ### DL defination
 #### Deep learning is a specialized subfield of machine learning and artificial intelligence (AI) utilizing deep artificial neural networks (ANNs) containing multiple hidden layers to automatically extract high-level feature representations from unstructured data.
+### Limitations of ML and Why DL
+#### Harder problems need complex decision boundaries and special handling for images, audio, text and 3D data.
+SVM, NB, LR and ensembles are “not enough” for these problems.
+Classical ML works on small data. As you feed it more data, it doesn’t improve.
+It needs manual feature extraction and data preprocessing by humans.
+### Advantages of DL
+#### Learns features automatically.
+Handles unstructured data.
+Learns hierarchical features.
+High accuracy on complex tasks.
+Scales with big data and compute.
+### challenges of DL
+#### Data availability: it needs a lot of varied data, or it won’t generalize to unseen data.
+Model complexity: design is trial and error. Too simple underfits, too complex overfits.
+Lacks global generalization: with so many parameters, it is very hard to get the test error down to zero.
+Can’t multitask: a cat/dog model can’t classify men/women, and reasoning is beyond it.
+Hardware dependence: it is computationally expensive and needs GPUs or TPUs, not a normal CPU.
 ### Neural Network
 #### Perceptron
-##### local:img-1790047931893-ee798507668c8fa2
+##### local:img-1794824970372-8ea0a05322772eb2
+##### single layer perceptron
+###### It models one neuron: n inputs, a weighted sum, then an output. It is used for linear or binary classification.
+Equation: ŷ = Wᵀx + b. Example: fish width, height and lightness give salmon (1) or shrimp (−1).
+Limitation: one neuron “hardly makes a dent” in complex problems, so it can only draw a linear boundary.
+##### Multilayer perceptron
+###### A hierarchical mesh of neurons that learns a more sophisticated decision boundary.
+It has input, hidden (all the calculation with weights, biases and data) and output layers.
+Uses: stock prediction, image classification, spam detection, sentiment analysis and data compression.
+Adding many hidden layers causes vanishing gradients and overfitting.
 #### Layers
 ##### Input Layers
 ###### It's the entry point for raw data.  the number of nodes exactly matches the number of features in your dataset.
 ##### Hiddeen Layers
 ##### Output Layers
-###### The final layer that produces the model's prediction
-activation function for hidden layer just before the output layer is decided on the basis of task :-
+###### The final layer that produces the model's prediction is decided on the basis of task :-
 1) Regression (Predicting a value): A single node with a linear (or no) activation function
 2) Binary Classification (Yes/No): A single node using a Sigmoid activation function to output a probability between 0 and 1.
 3) Multi-class Classification: Multiple nodes (one for each class) using a SoftMax activation function to output a probability distribution across all possible categories.
 #### Weights and bias
 ##### each connection from one perceptron to another has some kind of weight showing how closely related the 2 perceptron's are to each other
-Weights are used to shift the line , Bias is used to determine the slope
-##### local:img-1790052092700-b0547e27f32e135b
+Weights control the slope (orientation) of the decision line and how strongly each input counts. Bias shifts the line so it need not pass through the origin
+##### local:img-1794825054263-62c0e666c146e05f
 #### Types
 ##### Shallow NN
 ###### Neural network with 1 or less hidden layers
@@ -584,10 +609,25 @@ Weights are used to shift the line , Bias is used to determine the slope
 ##### GAN
 ###### This type of network essentially learns the structure of the data, and patterns
 in a way that it can be used to generate new examples, similar to that of the original dataset.
+##### Transformers
+###### A newer class of model, used mostly for sequential data like NLP. replacing RNN and CNN
 ### Trainng
+#### Trainng FLow
+##### >Input.
+>Forward propagation (w·x + b, then activation).
+>Output.
+>Error calculation using the loss function.
+>Backpropagation updates the weights and biases.
 #### Parameter control
 ##### Leraning rate
-###### local:img-1790091386536-480f79548dd5341e
+###### local:img-1794833827718-380ec9a27e6baacf
+###### >The learning rate is the size of the change made to the weights during backprop.
+
+>It is a hyperparameter set with the optimizer, for example Adam(learning_rate=0.001). The default is 0.001 (1e-3).
+
+>Too small means very slow training. Too high means it overshoots the minimum and may diverge.
+
+>To find it: learning rate range test, grid search, random search. A scheduler can also adjust it during training.
 ###### Constant LR
 ###### Time decay
 ###### Step based decay
@@ -597,33 +637,30 @@ in a way that it can be used to generate new examples, similar to that of the or
 ##### Batch
 
 > A distinct subset of the training dataset processed by a neural network during a single operational cycle which is forward propagation , loss , backward propagation and parameter update.
-###### Imports
-###### Defining an Input and Output Layer
-###### Scaling the Data
 ###### Forward propogation
-###### Loss calculation
+- z = W·x + b, then a = f(z).
+###### LOSS Calculation
 - MAE
+- mean of |y − ŷ|, less sensitive to outliers than MSE
 - MSE
-- local:img-1790091785595-3923fa15b7795176
-- Binary Cross Entropy
-- # Cross-entropy is a sort of measure for the distance from one probability distribution to another.
-# Activation function: the sigmoid activation.
-- local:img-1790091876784-50a40517875c2f4d
+- local:img-1794828558753-d14b2fb3647ab722
+- Binary cross Entropy
+- Cross-entropy is a sort of measure for the distance from one probability distribution to another.
+- local:img-1794828682403-5c6796e7e2ca19a2
 - Categorical Cross Entropy
-- local:img-1790091915519-dcd9edfa34177b47
+- local:img-1794828698165-5d687ab5e3f5ab8c
 ###### Back propogation
-- local:img-1790092088253-51c9975a8b3d5f10
-###### Parameter update
+- local:img-1794828970095-b59583863d822565
+###### Parameter Update
 - Complexity of the model depends on no. of parameters and it's training , which is controlled by the change in weights and bias combined called as parameters .
 - Issues
-- Vanishing gradient
+- VAnishing gradient
 - ● As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.
 ● In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.
-###### Plot Curve
 ##### Epoch
 ###### One complete pass of the entire dataset through the neural network
 ### Gradient Descent
-#### local:img-1790092956486-65461ba74df8fe10
+#### local:img-1794828078571-b6f4349fd91831b5
 #### Defination
 #### Types
 ##### Batch GD
@@ -637,11 +674,6 @@ in a way that it can be used to generate new examples, similar to that of the or
 ##### Adam
 ### Overfitting
 #### ● Overfitting describes the phenomenon of fitting the training data too closely, maybe with hypotheses that are too complex.
-● In such a case, your learner ends up fitting the training data really well, but will perform much, much more poorly on real examples.
-
-
-
-When a model is too eagerly learning noise, the validation loss may start to increase during training.
 #### Training Curve Diagnosis
 #### Regularization
 ##### L2 ( Ridge )
@@ -654,7 +686,7 @@ When a model is too eagerly learning noise, the validation loss may start to inc
 ##### Early Stopping
 ##### Data Augmentation
 ##### Simplify The Model
-##### local:img-1790093002894-dfa710694bff5724
+##### local:img-1794828351716-68c1f7a7032ae58f
 ### Applications
 #### Computer Vision
 #### Natural language Processing ( NLP )
@@ -662,6 +694,16 @@ When a model is too eagerly learning noise, the validation loss may start to inc
 #### Healthcare
 #### Autonomous Vehicles
 #### Recommendation Systems
+### Tensorflow
+#### >Developed by the Google Brain Team. It is an open-source library for numerical computation, used in research and production.
+>Data is held in tensors: multidimensional arrays, a generalization of vectors and matrices.
+>It works as a data flow graph: nodes are math operations and edges are tensors. A program has two steps, build the graph and execute the graph.
+>Computing can be spread across CPUs and GPUs.
+### Keras
+#### >A high-level neural network API written in Python, by François Chollet.
+>Easy and fast prototyping: user-friendly, modular and extensible. It gives clear feedback on errors.
+>It runs on top of TensorFlow, Theano or CNTK, and works on CPU and GPU.
+>Why Keras: simple to start, supports CNN, RNN and combinations, and is deep enough for serious models.
 ### CODES
 #### Import
 ##### import pandas as pd
@@ -701,7 +743,7 @@ print("The predictions are:\n", melbourne_model.predict(X.head()))
 ##### predicted_home_prices = melbourne_model.predict(X)
 print("In-Sample MAE:", mean_absolute_error(y, predicted_home_prices))
 #### Manual Epoch
-##### with tf.GradientTape() as tape:        
+##### with tf.GradientTape() as tape:
      preds = model(X)                                                  
 # forward propagation        
 loss = tf.reduce_mean(            tf.keras.losses.sparse_categorical_crossentropy(y, preds))   
@@ -717,37 +759,38 @@ loss = tf.reduce_mean(            tf.keras.losses.sparse_categorical_cross
 ##### Sigmoid
 ###### It is a differentiable activation function means it can be used for gradient Descent. ( good for probabilities)
 Suffers form Vanishing Gradient
-Output Range ➖ Binary - 0 or 1
+Output Range ➖ Binary - ( 0 1 )
 f(x)=1/(1+e^(-x))
-###### local:img-1790393103817-225faf5ce9b0aab0
+###### local:img-1794841402947-a5a04d5068b36154
 ##### Tanh
 ###### It is Zero centered Means can be used for Gradient Descent
 Output range ➖[ -1    1 ]
 f(x)={e^x-e^(-x)}/{e^x+e^(-x)}
-###### local:img-1790393223254-d926b16f9fe22215
+###### local:img-1794841417947-39d685cf9d5f92c5
 ##### Relu
 ###### It’s main advantage is that it avoids and rectifies vanishing gradient problem and less computationally expensive than tanh and sigmoid.
 f(x)=max(0,x)
-###### local:img-1790393277278-e7987caa9b7aa84b
-###### local:img-1790393283701-dc39cc888cd156fc
+###### local:img-1794841433169-03393cf2b273e9b8
+###### local:img-1794841437800-5dae8a859c19c0df
 ##### Softmax
 ###### It is used when output is categorical
 it calculates the possibility of target class over all target classes
 softmax(z_i)={exp(z_i)}/{\sum_j exp(z_j)}
-###### local:img-1790393441404-d3b743f1fdc7d1fe
+###### local:img-1794841668296-b41c286d4d3fba9c
+###### local:img-1794841442336-840ad28b58f946a9
 ##### Swish
 ###### Inspired by Sigmoid Function , Used for Gating in LSTM and Highway Networks
-###### local:img-1790393540176-297957c0cc932c72
+###### local:img-1794841448935-e15f3e359950da63
 ##### Maxout
 ###### Generalization of ReLU and LeakyReLU ,it’s a learnable activation function.
 max(w^T_1+b_1 , w^t_2+b_2)
 ##### Softplus
 ###### smother version of ReLU
 f(x)=ln(1+exp x)
-###### local:img-1790393637806-8a5e3d373e266f7f
-##### local:img-1790393472497-d23c9b03e3593205
+###### local:img-1794841458836-18417ab692a8e79c
+##### local:img-1794841463406-d9103aea2ba6d8fc
 ### Choosing Activation Functions
-#### local:img-1790393499824-a742c78b4f96aa8b
+#### local:img-1794841469170-d35f1d99659860d9
 ## Recureent Nural Network ( RNN ) and Long Short-Tem Memory (LSTM)
 ### RNN
 #### Designed to handle sequential data by maintaining a hidden state ( memory) that captures information from previous time steps.
