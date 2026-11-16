@@ -884,25 +884,50 @@ f(x)=ln(1+exp x) , unilateral suppression like ReLU. Range (0, +∞).
 #### States: RNN 1 (h) | LSTM 2 (h, C) | GRU 1 (h) | BiRNN 2 directions
 #### Gates: RNN 0 | LSTM 3 | GRU 2 | BiRNN depends on cell
 #### Real-time use: RNN yes | LSTM yes | GRU yes | BiRNN no
-## Convolutional Neural Network ( CNN )
+## Convolutional Neural Network (CNN)
 ### Why CNN?
 #### Limitations of ANN
-##### Location-shift Sensitivity
-##### Computationally Expensive
+##### Flattening destroys spatial structure
+##### Location-shift sensitivity: the same object at a different position looks like a new input
+##### Computationally expensive: a 224×224×3 image has 150,528 inputs, so one Dense layer of 1000 units needs about 150 million weights
+#### Why Convolutions
+##### Parameter sharing: a feature detector (e.g. vertical edge) useful in one part of the image is useful in other parts
+##### Sparsity of connections: each output value depends on only a small number of inputs
 #### Convolution
-##### Convolution is a Mathematical operation where two functions are blended together to produce a third function . It actually measures how much one function overlaps with another .
-In Deep Learning Small Matrices and Big Matrices roll together to form a single new value, which helps the computer detect patterns like edges, curves, or textures.
+##### Convolution is a mathematical operation where two functions are blended together to produce a third function. It measures how much one function overlaps with another.
+In deep learning, small matrices (kernels) slide over big matrices (images) to form new values, which helps detect patterns like edges, curves or textures.
+Strictly, DL libraries compute cross-correlation (the kernel is not flipped).
 ### Image Processing
 #### Resizing
+##### Convert images of different sizes to one uniform size (usually 224 × 224)
 #### Normalization
+##### Scale pixel values to one range, usually 0 to 1 (divide by 255) or −1 to +1
 #### Data Augmentation
+##### Generate more training images from existing ones: rotate, flip, crop, lighting and colour changes
+##### The CNN sees variations of the same image, so it generalizes better
+#### In Keras
+##### Pre-processing can sit inside the model as layers: layers.Resizing, layers.Rescaling, layers.RandomFlip, layers.RandomRotation
+##### The older tf.keras.preprocessing.image / ImageDataGenerator route is deprecated
 ### CNN architecture
+#### Overall pipeline
+##### Input → [Conv → BN → ReLU → Pool] × N → Flatten → Fully Connected → Softmax/Sigmoid
+##### Conv blocks = feature extraction; fully connected layers = classification
+#### Convolution Operation (basic)
+##### Overlay the filter on the input, multiply element-wise, add the results
+##### Move by the stride to get the next output cell
+##### Example: 6×6 input, 3×3 filter, s=1, p=0 → 4×4 output, (4×4)×(3×3) = 144 multiplications
 #### Filters / Kernels
+##### Small learnable weight matrices (e.g. vertical-edge filter [1 0 −1] in each row)
+##### Early layers detect edges, deeper layers textures, parts and objects
 #### Stride
 ##### How many cells the filter is moved
+##### Example: 6×6, f=3, s=2 → 2×2 output, (2×2)×(3×3) = 36 multiplications
 #### Padding
 ##### It allows us to use a CONV layer without necessarily shrinking the height and width of the volumes.
 It helps us keep more of the information at the border of an image.
+##### valid = no padding
+##### same = padding so output size equals input size (p = (f−1)/2 for s=1 and odd f)
+##### Example: 6×6, f=3, s=2, p=1 → 3×3
 #### Output Dimension Formula
 ##### n=height of current layer
 f=Spatial size of filter
@@ -910,39 +935,188 @@ p=padding
 s=stride
 l=the current layer you are calculating
 l -1=the previous layer.
+##### n[l] = ⌊(n[l−1] + 2p[l] − f[l]) / s[l]⌋ + 1
 ##### local:img-1794852990560-e3044e7bb77f4ff8
+##### Corrections to the image
+###### Stride is s[l], not g[l]
+###### Padding is p[l] (the PDF writes p[l−1]); pick one notation
+##### Examples (6×6 input, f=3)
+###### s=1, p=0 → ⌊3/1⌋+1 = 4
+###### s=2, p=0 → ⌊3/2⌋+1 = 2
+###### s=2, p=1 → ⌊5/2⌋+1 = 3
 #### Convolution on Volume
 ##### local:img-1794852997419-f6383b2b79ba6afe
+##### Filter channels must match input channels (n_c)
+##### One output cell = convolution on each channel, then add the results
+##### Example: 6×6×3 input, one 3×3×3 filter → 4×4 output, (4×4)×(3×3×3) = 432 multiplications
 #### Multiple Filters
 ##### local:img-1794853003167-2d2d40484e3f86ae
+##### Output channels = number of filters
+##### Example: two 3×3×3 filters on 6×6×3 → 4×4×2, (4×4×2)×(3×3×3) = 864 multiplications
 #### 1×1 Convolution
 ##### local:img-1794853010605-a506b3b3d760cb94
+##### Keeps height and width, merges channels: 6×6×5 with two 1×1×5 filters → 6×6×2
+##### Uses: shrink channel depth cheaply, add non-linearity, bottleneck layers in Inception / ResNet / DenseNet
+##### Example: 28×28×192 → 5×5 conv with 32 filters costs about 120M multiplications; with a 1×1 conv to 16 channels first, about 12.4M
+#### One Convolution Layer
+##### Output = activation(conv(input, filters) + b), e.g. ReLU or tanh
+##### Parameters = (f × f × n_c_prev + 1) × number of filters
+##### Example: one 3×3×3 filter = 27 weights + 1 bias = 28 parameters; Conv2D(32, 3) on RGB = 28 × 32 = 896
+#### Sample complete network
+##### 39×39×3 → (f=3, s=1, p=0, 10 filters) → 37×37×10
+##### → (f=5, s=2, p=0, 20 filters) → 17×17×20
+##### → (f=5, s=2, p=0, 40 filters) → 7×7×40
+##### → flatten (1960) → logistic / softmax
 #### Pooling Layers
-##### Reducing the size of the representations to make some of the features it detects a bit more robust.
-it has hyper-parameters:
-but it doesn’t have parameter; there’s nothing for gradient descent to learn
-##### Max polling
-##### AVG Polling
-##### local:img-1794853019004-a8ec7e3b5953e4a6
+##### Reducing the size of the representations to speed up calculations and make some of the features it detects a bit more robust.
+It has hyper-parameters (size f, stride s, type), but it doesn't have parameters; there's nothing for gradient descent to learn
+##### Max pooling
+###### Takes the highest value in each window (more common today)
+##### Avg pooling
+###### Takes the average of each window
+##### Example: 4×4 input, f=2, s=2 → 2×2; max = [9 5; 6 8], avg = [6.0 3.3; 4.3 5.3]
+##### Output size: ⌊(n − f)/s⌋ + 1 per side; channels unchanged (6×6×3 → 3×3×3)
 ##### Hyper-Parameters
 ###### Size
 ###### Stride
 ###### Type
+#### Role of Conv, ReLU and Pooling (summary)
+##### local:img-1794853019004-a8ec7e3b5953e4a6
+##### Convolution: sparse connections reduce overfitting, parameter sharing, conv + pooling gives location-invariant feature detection
+##### ReLU: introduces non-linearity, faster to compute so training is faster
+##### Pooling: reduces dimensions and computation, reduces overfitting, tolerant to small distortions
 #### Batch Normalization layer
-##### To normalize inputs between layers. could be used before or after the activation function layer
+##### Normalizes inputs between layers using the mini-batch mean and std, then scales and shifts with learnable γ and β
+##### Can be used before or after the activation: Conv → BN → ReLU → Pool
+##### Mainly makes training of deep nets faster and more stable, with a mild regularizing effect
+##### At inference it uses moving averages of mean and std
 #### Dropout Layer
-##### Drop out a fraction of neurons from a layer.
+##### Randomly drops a fraction of neurons (e.g. p = 0.5) during training only
+##### Makes the network learn more robust features; mostly used around the Dense layers (AlexNet, VGG)
 #### Flatten Layer
-##### To convert multi-dimensional convolutional blocks into 1-D vectors
+##### Converts multi-dimensional conv output into a 1-D vector (3×3 map → 9 values; 7×7×40 → 1960)
 #### Fully Connected Layer
-##### To process the flattened image data and carry out the classification.
+##### Takes the flattened vector; the actual classification happens here
+##### Output layer: Softmax for multi-class, Sigmoid for binary
+##### Can be seen as a separate neural network whose input is the conv feature maps
 ### Pre-Trained Models
-#### AlexNet
-#### VGGNet
-#### ResNet
-#### Inception v3
-#### DesnseNet
-#### EffecientNet
-#### DarkNet
-#### TFLite
 #### local:img-1794853045329-70266faf96ddcf58
+#### Corrections to the image
+##### The percentages are top-5 error, not loss
+##### Inception v1 had no batch normalization or RMSProp (those came with v2/v3)
+##### ResNet skip connections are plain identity additions, not gated units; ResNet year is 2015
+#### ImageNet and ILSVRC
+##### ImageNet: large visual database for object recognition research
+##### ILSVRC: annual contest to classify and detect objects (1000 classes); metric is top-5 error
+##### Top-5 error: 2010 ≈ 28%, 2011 ≈ 26% (non-CNN), 2012 AlexNet 15.3%, 2014 GoogLeNet 6.67%, 2015 ResNet 3.57% (human ≈ 5.1%)
+#### LeNet-5 (1998)
+##### Yann LeCun et al.; pioneering 7-level CNN for digit classification
+##### Banks used it to read handwritten numbers on cheques
+##### Input: 32×32 grayscale; about 60 thousand parameters
+##### C1 conv → S2 pool → C3 conv → S4 pool → C5 → F6 → output
+##### Limit: higher-resolution images need larger, more conv layers (compute-bound)
+#### AlexNet (2012)
+##### Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton (SuperVision group)
+##### Won ILSVRC 2012: top-5 error 15.3% (runner-up 26.2%, not a CNN)
+##### 5 Conv + 3 FC = 8 layers, about 60 million parameters, 1000 classes
+##### ReLU after every conv and FC layer
+##### Dropout (p = 0.5) and data augmentation (flips, crops, colour changes) against overfitting
+##### Trained 6 days on 2 GTX 580 GPUs, 90 epochs, so it is split into 2 parallel pipelines with cross-connections
+#### ZFNet (2013)
+##### Matthew Zeiler and Rob Fergus
+##### AlexNet with tuned hyper-parameters: 7×7 filters (stride 2) in layer 1 instead of 11×11, more filters deeper
+##### 14.8% top-5 error (the paper's single model; the winning 2013 entry scored about 11%)
+##### Deconvolutional network to visualize features: early layers edges and colours, deep layers dog faces, flowers
+#### VGGNet (2014)
+##### Simonyan and Zisserman; ILSVRC 2014 runner-up (top-5 error 7.3%)
+##### Very uniform: only 3×3 conv (stride 1) and 2×2 max pool (stride 2), lots of filters
+##### Two stacked 3×3 convs see a 5×5 area with fewer parameters than one 5×5
+##### VGG-16 = 13 conv + 3 FC = 16 weight layers, 138 million parameters (VGG-19: 144 million)
+##### Single-model top-5 error: VGG-16 8.8%, VGG-19 9.0%
+##### Trained on 4 GPUs for 2–3 weeks; public weights, popular baseline feature extractor, but heavy
+#### GoogLeNet / Inception v1 (2014)
+##### Google; winner of ILSVRC 2014, top-5 error 6.67%
+##### 22 layers deep with about 4 million parameters (slide figure) vs 60 million in AlexNet
+##### Inception module: parallel 1×1, 3×3, 5×5 convs and pooling, outputs concatenated; 1×1 convs cut channels first to save computation
+##### Image distortions used for augmentation
+#### Inception v3
+##### Factorized convolutions (5×5 → two 3×3; n×n → 1×n then n×1)
+##### Batch normalization, RMSProp, label smoothing; 299×299 input
+#### ResNet (2015)
+##### Kaiming He et al.; winner of ILSVRC 2015, top-5 error 3.57% (better than human ≈ 5.1%)
+##### Residual (skip) connection: output = F(x) + x, so gradients flow straight through; allows 152 layers
+##### Plain identity addition, not gated (gated shortcuts are Highway networks)
+##### Heavy batch normalization; ResNet-50/101/152 use bottleneck blocks 1×1 → 3×3 → 1×1
+##### Blocks per stage: ResNet-50 [3,4,6,3], ResNet-101 [3,4,23,3], ResNet-152 [3,8,36,3]
+##### Lower complexity than VGG despite being much deeper
+#### DenseNet (2017)
+##### Huang, Liu, van der Maaten, Weinberger (CVPR 2017)
+##### Problem: very deep CNNs are hard to train (vanishing gradients); short paths from early to later layers help
+##### Dense connectivity: each layer gets the feature maps of all previous layers in its block; L layers → L(L+1)/2 connections (traditional CNN: L)
+##### ResNet adds (element-wise), DenseNet concatenates (channel-wise)
+##### Feature maps in a dense block must have the same height and width so they can be concatenated
+##### Growth rate k: each layer adds only k new feature maps (k = 32 in DenseNet-121)
+##### Layer: BN → ReLU → 1×1 conv (4k filters) → BN → ReLU → 3×3 conv (k filters)
+##### Transition layer between blocks: BN → ReLU → 1×1 conv (compress channels) → 2×2 avg pool, stride 2
+##### Example: block input 56×56×64 + 6 layers × 32 = 56×56×256 → transition → 28×28×128
+##### DenseNet-121: 7×7 conv s2 → 3×3 max pool s2 → Dense block (6) → T → Dense block (12) → T → Dense block (24) → T → Dense block (16) → 7×7 global avg pool → FC softmax
+##### Layer count: (6+12+24+16) × 2 convs + initial conv + 3 transition convs + FC = 121
+##### Advantages: feature reuse, strong gradient flow (implicit deep supervision), parameter efficiency (about 8 million parameters for DenseNet-121)
+##### Cost: memory-hungry because concatenation keeps all feature maps
+#### EfficientNet (2019)
+##### Tan and Le (Google); compound scaling: scale depth, width and input resolution together with one coefficient
+##### Family B0–B7; B0 found by neural architecture search (MBConv blocks)
+##### High accuracy with far fewer parameters and less compute than older models
+#### DarkNet
+##### Open-source neural-network framework in C/CUDA by Joseph Redmon
+##### Also the name of the backbone CNNs (Darknet-19, Darknet-53) used in YOLO real-time object detection
+#### TFLite (TensorFlow Lite)
+##### Not an architecture: a lightweight runtime to deploy trained models on mobile, embedded and edge devices
+##### Convert a Keras/TF model to .tflite; quantization shrinks size and speeds up inference
+#### Comparison (Year | Model | Key idea | Best for | Top-5 error | Parameters)
+##### 1998 | LeNet-5 | pioneering CNN | handwritten digits | – | about 60 thousand
+##### 2012 | AlexNet | deep CNN, ReLU, dropout | ImageNet classification | 15.3% | about 60 million
+##### 2013 | ZFNet | tuned AlexNet, feature visualization | – | 14.8% | –
+##### 2014 | VGG-16 | very deep, only 3×3 filters | high-accuracy tasks | 8.8% (7.3% in contest) | 138 million
+##### 2014 | GoogLeNet | inception modules | efficient feature extraction | 6.67% | about 4 million (slide)
+##### 2015 | ResNet-152 | residual connections | very deep networks | 3.57% | about 60 million
+##### 2017 | DenseNet-121 | dense connectivity, concatenation | feature reuse, fewer parameters | – | about 8 million
+##### 2019 | EfficientNet | compound scaling | high accuracy with less compute | – | B0 about 5 million
+#### Transfer Learning
+##### Reuse a network trained on ImageNet for a new task instead of training from scratch
+##### Early layers learn general features (edges, textures), so they transfer well
+##### Feature extraction: freeze the pre-trained base, train only a new classifier head (small dataset)
+##### Fine-tuning: unfreeze the top conv layers and train with a very small learning rate (more data or a different domain)
+##### Steps: load base with include_top=False → freeze → add GlobalAveragePooling + Dense(softmax) → train head → optionally fine-tune
+### CODES
+#### CNN model
+##### model = keras.Sequential([
+layers.Input(shape=(224, 224, 3)),
+layers.Rescaling(1./255),
+layers.RandomFlip("horizontal"),
+layers.Conv2D(32, 3, padding="same"),
+layers.BatchNormalization(),
+layers.Activation("relu"),
+layers.MaxPooling2D(2),
+layers.Conv2D(64, 3, padding="same"),
+layers.BatchNormalization(),
+layers.Activation("relu"),
+layers.MaxPooling2D(2),
+layers.Flatten(),
+layers.Dense(128, activation="relu"),
+layers.Dropout(0.5),
+layers.Dense(10, activation="softmax"),
+])
+#### compile and fit
+##### Same as the ANN CODES; use sparse_categorical_crossentropy for integer labels, binary_crossentropy for 2 classes
+#### Transfer learning
+##### base = keras.applications.DenseNet121(weights="imagenet", include_top=False, input_shape=(224, 224, 3))
+base.trainable = False   # freeze the base (feature extraction)
+# inputs must go through keras.applications.densenet.preprocess_input
+model = keras.Sequential([
+base,
+layers.GlobalAveragePooling2D(),
+layers.Dropout(0.3),
+layers.Dense(5, activation="softmax"),
+])
+# fine-tuning: set base.trainable = True, recompile with a very small learning rate (e.g. 1e-5)

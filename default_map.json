@@ -1,13 +1,13 @@
 {
   "mindmap": {
     "mm-settings": {
-      "spacing": 62,
+      "spacing": 48,
       "border-radius": 24,
       "contextUrls": [],
       "mm-link-width": 8,
       "style": "4",
       "branch-alignment": "balanced",
-      "font-family": "Indie Flower"
+      "font-family": "Bebas Neue"
     },
     "mm-node": {
       "content": "Deep Learning",
@@ -2578,7 +2578,6 @@
                   "branchColor": "#f39c12"
                 }
               ],
-              "collapsed": true,
               "branchColor": "#f39c12"
             },
             {
@@ -2644,7 +2643,7 @@
           "branchColor": "#f39c12"
         },
         {
-          "content": "Convolutional Neural Network ( CNN )",
+          "content": "Convolutional Neural Network (CNN)",
           "children": [
             {
               "content": "Why CNN?",
@@ -2653,12 +2652,34 @@
                   "content": "Limitations of ANN",
                   "children": [
                     {
-                      "content": "Location-shift Sensitivity",
+                      "content": "Flattening destroys spatial structure",
                       "children": [],
                       "branchColor": "#9b59b6"
                     },
                     {
-                      "content": "Computationally Expensive",
+                      "content": "Location-shift sensitivity: the same object at a different position looks like a new input",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Computationally expensive: a 224×224×3 image has 150,528 inputs, so one Dense layer of 1000 units needs about 150 million weights",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "Why Convolutions",
+                  "children": [
+                    {
+                      "content": "Parameter sharing: a feature detector (e.g. vertical edge) useful in one part of the image is useful in other parts",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Sparsity of connections: each output value depends on only a small number of inputs",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2670,7 +2691,7 @@
                   "content": "Convolution",
                   "children": [
                     {
-                      "content": "Convolution is a Mathematical operation where two functions are blended together to produce a third function . It actually measures how much one function overlaps with another .\nIn Deep Learning Small Matrices and Big Matrices roll together to form a single new value, which helps the computer detect patterns like edges, curves, or textures.",
+                      "content": "Convolution is a mathematical operation where two functions are blended together to produce a third function. It measures how much one function overlaps with another.\nIn deep learning, small matrices (kernels) slide over big matrices (images) to form new values, which helps detect patterns like edges, curves or textures.\nStrictly, DL libraries compute cross-correlation (the kernel is not flipped).",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2687,17 +2708,60 @@
               "children": [
                 {
                   "content": "Resizing",
-                  "children": [],
+                  "children": [
+                    {
+                      "content": "Convert images of different sizes to one uniform size (usually 224 × 224)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
                   "content": "Normalization",
-                  "children": [],
+                  "children": [
+                    {
+                      "content": "Scale pixel values to one range, usually 0 to 1 (divide by 255) or −1 to +1",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
                   "content": "Data Augmentation",
-                  "children": [],
+                  "children": [
+                    {
+                      "content": "Generate more training images from existing ones: rotate, flip, crop, lighting and colour changes",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "The CNN sees variations of the same image, so it generalizes better",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "In Keras",
+                  "children": [
+                    {
+                      "content": "Pre-processing can sit inside the model as layers: layers.Resizing, layers.Rescaling, layers.RandomFlip, layers.RandomRotation",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "The older tf.keras.preprocessing.image / ImageDataGenerator route is deprecated",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 }
               ],
@@ -2708,8 +2772,59 @@
               "content": "CNN architecture",
               "children": [
                 {
+                  "content": "Overall pipeline",
+                  "children": [
+                    {
+                      "content": "Input → [Conv → BN → ReLU → Pool] × N → Flatten → Fully Connected → Softmax/Sigmoid",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Conv blocks = feature extraction; fully connected layers = classification",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "Convolution Operation (basic)",
+                  "children": [
+                    {
+                      "content": "Overlay the filter on the input, multiply element-wise, add the results",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Move by the stride to get the next output cell",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: 6×6 input, 3×3 filter, s=1, p=0 → 4×4 output, (4×4)×(3×3) = 144 multiplications",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
                   "content": "Filters / Kernels",
-                  "children": [],
+                  "children": [
+                    {
+                      "content": "Small learnable weight matrices (e.g. vertical-edge filter [1 0 −1] in each row)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Early layers detect edges, deeper layers textures, parts and objects",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
@@ -2717,6 +2832,11 @@
                   "children": [
                     {
                       "content": "How many cells the filter is moved",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: 6×6, f=3, s=2 → 2×2 output, (2×2)×(3×3) = 36 multiplications",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2729,6 +2849,21 @@
                   "children": [
                     {
                       "content": "It allows us to use a CONV layer without necessarily shrinking the height and width of the volumes.\nIt helps us keep more of the information at the border of an image.",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "valid = no padding",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "same = padding so output size equals input size (p = (f−1)/2 for s=1 and odd f)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: 6×6, f=3, s=2, p=1 → 3×3",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2745,8 +2880,52 @@
                       "branchColor": "#9b59b6"
                     },
                     {
+                      "content": "n[l] = ⌊(n[l−1] + 2p[l] − f[l]) / s[l]⌋ + 1",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
                       "content": "local:img-1794852990560-e3044e7bb77f4ff8",
                       "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Corrections to the image",
+                      "children": [
+                        {
+                          "content": "Stride is s[l], not g[l]",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        },
+                        {
+                          "content": "Padding is p[l] (the PDF writes p[l−1]); pick one notation",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        }
+                      ],
+                      "collapsed": true,
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Examples (6×6 input, f=3)",
+                      "children": [
+                        {
+                          "content": "s=1, p=0 → ⌊3/1⌋+1 = 4",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        },
+                        {
+                          "content": "s=2, p=0 → ⌊3/2⌋+1 = 2",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        },
+                        {
+                          "content": "s=2, p=1 → ⌊5/2⌋+1 = 3",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        }
+                      ],
+                      "collapsed": true,
                       "branchColor": "#9b59b6"
                     }
                   ],
@@ -2758,6 +2937,21 @@
                   "children": [
                     {
                       "content": "local:img-1794852997419-f6383b2b79ba6afe",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Filter channels must match input channels (n_c)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "One output cell = convolution on each channel, then add the results",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: 6×6×3 input, one 3×3×3 filter → 4×4 output, (4×4)×(3×3×3) = 432 multiplications",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2772,6 +2966,16 @@
                       "content": "local:img-1794853003167-2d2d40484e3f86ae",
                       "children": [],
                       "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Output channels = number of filters",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: two 3×3×3 filters on 6×6×3 → 4×4×2, (4×4×2)×(3×3×3) = 864 multiplications",
+                      "children": [],
+                      "branchColor": "#9b59b6"
                     }
                   ],
                   "collapsed": true,
@@ -2784,6 +2988,70 @@
                       "content": "local:img-1794853010605-a506b3b3d760cb94",
                       "children": [],
                       "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Keeps height and width, merges channels: 6×6×5 with two 1×1×5 filters → 6×6×2",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Uses: shrink channel depth cheaply, add non-linearity, bottleneck layers in Inception / ResNet / DenseNet",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: 28×28×192 → 5×5 conv with 32 filters costs about 120M multiplications; with a 1×1 conv to 16 channels first, about 12.4M",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "One Convolution Layer",
+                  "children": [
+                    {
+                      "content": "Output = activation(conv(input, filters) + b), e.g. ReLU or tanh",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Parameters = (f × f × n_c_prev + 1) × number of filters",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: one 3×3×3 filter = 27 weights + 1 bias = 28 parameters; Conv2D(32, 3) on RGB = 28 × 32 = 896",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "Sample complete network",
+                  "children": [
+                    {
+                      "content": "39×39×3 → (f=3, s=1, p=0, 10 filters) → 37×37×10",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "→ (f=5, s=2, p=0, 20 filters) → 17×17×20",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "→ (f=5, s=2, p=0, 40 filters) → 7×7×40",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "→ flatten (1960) → logistic / softmax",
+                      "children": [],
+                      "branchColor": "#9b59b6"
                     }
                   ],
                   "collapsed": true,
@@ -2793,22 +3061,41 @@
                   "content": "Pooling Layers",
                   "children": [
                     {
-                      "content": "Reducing the size of the representations to make some of the features it detects a bit more robust.\nit has hyper-parameters:\nbut it doesn’t have parameter; there’s nothing for gradient descent to learn",
+                      "content": "Reducing the size of the representations to speed up calculations and make some of the features it detects a bit more robust.\nIt has hyper-parameters (size f, stride s, type), but it doesn't have parameters; there's nothing for gradient descent to learn",
                       "children": [],
                       "branchColor": "#9b59b6"
                     },
                     {
-                      "content": "Max polling",
+                      "content": "Max pooling",
+                      "children": [
+                        {
+                          "content": "Takes the highest value in each window (more common today)",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        }
+                      ],
+                      "collapsed": true,
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Avg pooling",
+                      "children": [
+                        {
+                          "content": "Takes the average of each window",
+                          "children": [],
+                          "branchColor": "#9b59b6"
+                        }
+                      ],
+                      "collapsed": true,
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: 4×4 input, f=2, s=2 → 2×2; max = [9 5; 6 8], avg = [6.0 3.3; 4.3 5.3]",
                       "children": [],
                       "branchColor": "#9b59b6"
                     },
                     {
-                      "content": "AVG Polling",
-                      "children": [],
-                      "branchColor": "#9b59b6"
-                    },
-                    {
-                      "content": "local:img-1794853019004-a8ec7e3b5953e4a6",
+                      "content": "Output size: ⌊(n − f)/s⌋ + 1 per side; channels unchanged (6×6×3 → 3×3×3)",
                       "children": [],
                       "branchColor": "#9b59b6"
                     },
@@ -2839,10 +3126,52 @@
                   "branchColor": "#9b59b6"
                 },
                 {
+                  "content": "Role of Conv, ReLU and Pooling (summary)",
+                  "children": [
+                    {
+                      "content": "local:img-1794853019004-a8ec7e3b5953e4a6",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Convolution: sparse connections reduce overfitting, parameter sharing, conv + pooling gives location-invariant feature detection",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "ReLU: introduces non-linearity, faster to compute so training is faster",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Pooling: reduces dimensions and computation, reduces overfitting, tolerant to small distortions",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
                   "content": "Batch Normalization layer",
                   "children": [
                     {
-                      "content": "To normalize inputs between layers. could be used before or after the activation function layer",
+                      "content": "Normalizes inputs between layers using the mini-batch mean and std, then scales and shifts with learnable γ and β",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Can be used before or after the activation: Conv → BN → ReLU → Pool",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Mainly makes training of deep nets faster and more stable, with a mild regularizing effect",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "At inference it uses moving averages of mean and std",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2854,7 +3183,12 @@
                   "content": "Dropout Layer",
                   "children": [
                     {
-                      "content": "Drop out a fraction of neurons from a layer.",
+                      "content": "Randomly drops a fraction of neurons (e.g. p = 0.5) during training only",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Makes the network learn more robust features; mostly used around the Dense layers (AlexNet, VGG)",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2866,7 +3200,7 @@
                   "content": "Flatten Layer",
                   "children": [
                     {
-                      "content": "To convert multi-dimensional convolutional blocks into 1-D vectors",
+                      "content": "Converts multi-dimensional conv output into a 1-D vector (3×3 map → 9 values; 7×7×40 → 1960)",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2878,7 +3212,17 @@
                   "content": "Fully Connected Layer",
                   "children": [
                     {
-                      "content": "To process the flattened image data and carry out the classification.",
+                      "content": "Takes the flattened vector; the actual classification happens here",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Output layer: Softmax for multi-class, Sigmoid for binary",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Can be seen as a separate neural network whose input is the conv feature maps",
                       "children": [],
                       "branchColor": "#9b59b6"
                     }
@@ -2894,48 +3238,515 @@
               "content": "Pre-Trained Models",
               "children": [
                 {
-                  "content": "AlexNet",
+                  "content": "local:img-1794853045329-70266faf96ddcf58",
                   "children": [],
                   "branchColor": "#9b59b6"
                 },
                 {
-                  "content": "VGGNet",
-                  "children": [],
+                  "content": "Corrections to the image",
+                  "children": [
+                    {
+                      "content": "The percentages are top-5 error, not loss",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Inception v1 had no batch normalization or RMSProp (those came with v2/v3)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "ResNet skip connections are plain identity additions, not gated units; ResNet year is 2015",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
-                  "content": "ResNet",
-                  "children": [],
+                  "content": "ImageNet and ILSVRC",
+                  "children": [
+                    {
+                      "content": "ImageNet: large visual database for object recognition research",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "ILSVRC: annual contest to classify and detect objects (1000 classes); metric is top-5 error",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Top-5 error: 2010 ≈ 28%, 2011 ≈ 26% (non-CNN), 2012 AlexNet 15.3%, 2014 GoogLeNet 6.67%, 2015 ResNet 3.57% (human ≈ 5.1%)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "LeNet-5 (1998)",
+                  "children": [
+                    {
+                      "content": "Yann LeCun et al.; pioneering 7-level CNN for digit classification",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Banks used it to read handwritten numbers on cheques",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Input: 32×32 grayscale; about 60 thousand parameters",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "C1 conv → S2 pool → C3 conv → S4 pool → C5 → F6 → output",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Limit: higher-resolution images need larger, more conv layers (compute-bound)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "AlexNet (2012)",
+                  "children": [
+                    {
+                      "content": "Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton (SuperVision group)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Won ILSVRC 2012: top-5 error 15.3% (runner-up 26.2%, not a CNN)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "5 Conv + 3 FC = 8 layers, about 60 million parameters, 1000 classes",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "ReLU after every conv and FC layer",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Dropout (p = 0.5) and data augmentation (flips, crops, colour changes) against overfitting",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Trained 6 days on 2 GTX 580 GPUs, 90 epochs, so it is split into 2 parallel pipelines with cross-connections",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "ZFNet (2013)",
+                  "children": [
+                    {
+                      "content": "Matthew Zeiler and Rob Fergus",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "AlexNet with tuned hyper-parameters: 7×7 filters (stride 2) in layer 1 instead of 11×11, more filters deeper",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "14.8% top-5 error (the paper's single model; the winning 2013 entry scored about 11%)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Deconvolutional network to visualize features: early layers edges and colours, deep layers dog faces, flowers",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "VGGNet (2014)",
+                  "children": [
+                    {
+                      "content": "Simonyan and Zisserman; ILSVRC 2014 runner-up (top-5 error 7.3%)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Very uniform: only 3×3 conv (stride 1) and 2×2 max pool (stride 2), lots of filters",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Two stacked 3×3 convs see a 5×5 area with fewer parameters than one 5×5",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "VGG-16 = 13 conv + 3 FC = 16 weight layers, 138 million parameters (VGG-19: 144 million)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Single-model top-5 error: VGG-16 8.8%, VGG-19 9.0%",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Trained on 4 GPUs for 2–3 weeks; public weights, popular baseline feature extractor, but heavy",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "GoogLeNet / Inception v1 (2014)",
+                  "children": [
+                    {
+                      "content": "Google; winner of ILSVRC 2014, top-5 error 6.67%",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "22 layers deep with about 4 million parameters (slide figure) vs 60 million in AlexNet",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Inception module: parallel 1×1, 3×3, 5×5 convs and pooling, outputs concatenated; 1×1 convs cut channels first to save computation",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Image distortions used for augmentation",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
                   "content": "Inception v3",
-                  "children": [],
+                  "children": [
+                    {
+                      "content": "Factorized convolutions (5×5 → two 3×3; n×n → 1×n then n×1)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Batch normalization, RMSProp, label smoothing; 299×299 input",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
-                  "content": "DesnseNet",
-                  "children": [],
+                  "content": "ResNet (2015)",
+                  "children": [
+                    {
+                      "content": "Kaiming He et al.; winner of ILSVRC 2015, top-5 error 3.57% (better than human ≈ 5.1%)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Residual (skip) connection: output = F(x) + x, so gradients flow straight through; allows 152 layers",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Plain identity addition, not gated (gated shortcuts are Highway networks)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Heavy batch normalization; ResNet-50/101/152 use bottleneck blocks 1×1 → 3×3 → 1×1",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Blocks per stage: ResNet-50 [3,4,6,3], ResNet-101 [3,4,23,3], ResNet-152 [3,8,36,3]",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Lower complexity than VGG despite being much deeper",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
-                  "content": "EffecientNet",
-                  "children": [],
+                  "content": "DenseNet (2017)",
+                  "children": [
+                    {
+                      "content": "Huang, Liu, van der Maaten, Weinberger (CVPR 2017)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Problem: very deep CNNs are hard to train (vanishing gradients); short paths from early to later layers help",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Dense connectivity: each layer gets the feature maps of all previous layers in its block; L layers → L(L+1)/2 connections (traditional CNN: L)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "ResNet adds (element-wise), DenseNet concatenates (channel-wise)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Feature maps in a dense block must have the same height and width so they can be concatenated",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Growth rate k: each layer adds only k new feature maps (k = 32 in DenseNet-121)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Layer: BN → ReLU → 1×1 conv (4k filters) → BN → ReLU → 3×3 conv (k filters)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Transition layer between blocks: BN → ReLU → 1×1 conv (compress channels) → 2×2 avg pool, stride 2",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Example: block input 56×56×64 + 6 layers × 32 = 56×56×256 → transition → 28×28×128",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "DenseNet-121: 7×7 conv s2 → 3×3 max pool s2 → Dense block (6) → T → Dense block (12) → T → Dense block (24) → T → Dense block (16) → 7×7 global avg pool → FC softmax",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Layer count: (6+12+24+16) × 2 convs + initial conv + 3 transition convs + FC = 121",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Advantages: feature reuse, strong gradient flow (implicit deep supervision), parameter efficiency (about 8 million parameters for DenseNet-121)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Cost: memory-hungry because concatenation keeps all feature maps",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "EfficientNet (2019)",
+                  "children": [
+                    {
+                      "content": "Tan and Le (Google); compound scaling: scale depth, width and input resolution together with one coefficient",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Family B0–B7; B0 found by neural architecture search (MBConv blocks)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "High accuracy with far fewer parameters and less compute than older models",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
                   "content": "DarkNet",
-                  "children": [],
+                  "children": [
+                    {
+                      "content": "Open-source neural-network framework in C/CUDA by Joseph Redmon",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Also the name of the backbone CNNs (Darknet-19, Darknet-53) used in YOLO real-time object detection",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
-                  "content": "TFLite",
-                  "children": [],
+                  "content": "TFLite (TensorFlow Lite)",
+                  "children": [
+                    {
+                      "content": "Not an architecture: a lightweight runtime to deploy trained models on mobile, embedded and edge devices",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Convert a Keras/TF model to .tflite; quantization shrinks size and speeds up inference",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 },
                 {
-                  "content": "local:img-1794853045329-70266faf96ddcf58",
-                  "children": [],
+                  "content": "Comparison (Year | Model | Key idea | Best for | Top-5 error | Parameters)",
+                  "children": [
+                    {
+                      "content": "1998 | LeNet-5 | pioneering CNN | handwritten digits | – | about 60 thousand",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2012 | AlexNet | deep CNN, ReLU, dropout | ImageNet classification | 15.3% | about 60 million",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2013 | ZFNet | tuned AlexNet, feature visualization | – | 14.8% | –",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2014 | VGG-16 | very deep, only 3×3 filters | high-accuracy tasks | 8.8% (7.3% in contest) | 138 million",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2014 | GoogLeNet | inception modules | efficient feature extraction | 6.67% | about 4 million (slide)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2015 | ResNet-152 | residual connections | very deep networks | 3.57% | about 60 million",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2017 | DenseNet-121 | dense connectivity, concatenation | feature reuse, fewer parameters | – | about 8 million",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "2019 | EfficientNet | compound scaling | high accuracy with less compute | – | B0 about 5 million",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "Transfer Learning",
+                  "children": [
+                    {
+                      "content": "Reuse a network trained on ImageNet for a new task instead of training from scratch",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Early layers learn general features (edges, textures), so they transfer well",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Feature extraction: freeze the pre-trained base, train only a new classifier head (small dataset)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Fine-tuning: unfreeze the top conv layers and train with a very small learning rate (more data or a different domain)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    },
+                    {
+                      "content": "Steps: load base with include_top=False → freeze → add GlobalAveragePooling + Dense(softmax) → train head → optionally fine-tune",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                }
+              ],
+              "branchColor": "#9b59b6"
+            },
+            {
+              "content": "CODES",
+              "children": [
+                {
+                  "content": "CNN model",
+                  "children": [
+                    {
+                      "content": "model = keras.Sequential([\nlayers.Input(shape=(224, 224, 3)),\nlayers.Rescaling(1./255),\nlayers.RandomFlip(\"horizontal\"),\nlayers.Conv2D(32, 3, padding=\"same\"),\nlayers.BatchNormalization(),\nlayers.Activation(\"relu\"),\nlayers.MaxPooling2D(2),\nlayers.Conv2D(64, 3, padding=\"same\"),\nlayers.BatchNormalization(),\nlayers.Activation(\"relu\"),\nlayers.MaxPooling2D(2),\nlayers.Flatten(),\nlayers.Dense(128, activation=\"relu\"),\nlayers.Dropout(0.5),\nlayers.Dense(10, activation=\"softmax\"),\n])",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "compile and fit",
+                  "children": [
+                    {
+                      "content": "Same as the ANN CODES; use sparse_categorical_crossentropy for integer labels, binary_crossentropy for 2 classes",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
+                  "branchColor": "#9b59b6"
+                },
+                {
+                  "content": "Transfer learning",
+                  "children": [
+                    {
+                      "content": "base = keras.applications.DenseNet121(weights=\"imagenet\", include_top=False, input_shape=(224, 224, 3))\nbase.trainable = False   # freeze the base (feature extraction)\n# inputs must go through keras.applications.densenet.preprocess_input\nmodel = keras.Sequential([\nbase,\nlayers.GlobalAveragePooling2D(),\nlayers.Dropout(0.3),\nlayers.Dense(5, activation=\"softmax\"),\n])\n# fine-tuning: set base.trainable = True, recompile with a very small learning rate (e.g. 1e-5)",
+                      "children": [],
+                      "branchColor": "#9b59b6"
+                    }
+                  ],
+                  "collapsed": true,
                   "branchColor": "#9b59b6"
                 }
               ],
