@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -114,7 +114,7 @@
     <div class="banner-outage">
         <div class="outage-banner-content">
             <div class="banner-text">
-                We’re currently facing some technical issues and are working to resolve them.
+                We�re currently facing some technical issues and are working to resolve them.
             </div>
         </div>
     </div>
@@ -706,6 +706,12 @@
                 <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11" />
             </svg>
         </button>
+        <button class="undo-redo-btn" id="mm-collapse-all-btn" title="Collapse / Expand All (C)" onclick="if(typeof toggleFoldUnfoldAll==='function')toggleFoldUnfoldAll()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12H9" /><path d="m15 18-6-6 6-6" /><path d="M3 19V5" />
+            </svg>
+        </button>
         <button id="mm-redo-btn" class="undo-redo-btn" title="Redo" disabled>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -797,19 +803,19 @@
         </div>
         <div class="license-content">
 
-            <p><em>Created by Linus Schärli — licensed CC BY‑NC 4.0</em></p>
+            <p><em>Created by Linus Sch�rli � licensed CC BY-NC 4.0</em></p>
             <p>This work is licensed under a <strong>Creative Commons Attribution-NonCommercial 4.0 International License</strong>.</p>
             
             <h4>You are free to:</h4>
             <ul>
-                <li><strong>Share</strong> — copy and redistribute the material in any medium or format</li>
-                <li><strong>Adapt</strong> — remix, transform, and build upon the material</li>
+                <li><strong>Share</strong> � copy and redistribute the material in any medium or format</li>
+                <li><strong>Adapt</strong> � remix, transform, and build upon the material</li>
             </ul>
             
             <h4>Under the following terms:</h4>
             <ul>
-                <li><strong>Attribution</strong> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
-                <li><strong>NonCommercial</strong> — You may not use the material for commercial purposes.</li>
+                <li><strong>Attribution</strong> � You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
+                <li><strong>NonCommercial</strong> � You may not use the material for commercial purposes.</li>
             </ul>
             <p class="license-footer">For commercial use, please contact us at <a href="mailto:contact@mindmapwizard.com">contact@mindmapwizard.com</a>. We welcome opportunities for collaboration and partnership.</p>
         </div>
@@ -968,6 +974,8 @@ window.addEventListener('load', () => {
     }
 });
 </script>
+<script src="./scripts/bulk-editor.js?v=20261101212945" defer="defer"></script>
+<script src="./scripts/image-fallback.js" defer></script>
 </body>
 
 </html>

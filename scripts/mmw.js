@@ -879,6 +879,11 @@ function initializeKeyboardShortcuts() {
 				document.getElementById('chat-toggle-btn')?.click();
 				return;
 			}
+			if (e.key === 'c' && !isModifierPressed) {
+				e.preventDefault();
+				if (typeof toggleFoldUnfoldAll === 'function') toggleFoldUnfoldAll();
+				return;
+			}
 		}
 	});
 }
