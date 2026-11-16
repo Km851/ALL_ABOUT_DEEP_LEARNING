@@ -572,24 +572,24 @@ in a way that it can be used to generate new examples, similar to that of the or
 ##### Batch
 > A distinct subset of the training dataset processed by a neural network during a single operational cycle which is forward propagation , loss , backward propagation and parameter update.
 ###### Forward propogation
-###### z = W·x + b, then a = f(z).
+- z = W·x + b, then a = f(z).
 ###### LOSS Calculation
-###### MAE
-###### mean of |y − ŷ|, less sensitive to outliers than MSE
-###### MSE
-###### local:img-1794828558753-d14b2fb3647ab722
-###### Binary cross Entropy
-###### Cross-entropy is a sort of measure for the distance from one probability distribution to another.
-###### local:img-1794828682403-5c6796e7e2ca19a2
-###### Categorical Cross Entropy
-###### local:img-1794828698165-5d687ab5e3f5ab8c
+- MAE
+- mean of |y − ŷ|, less sensitive to outliers than MSE
+- MSE
+- local:img-1794828558753-d14b2fb3647ab722
+- Binary cross Entropy
+- Cross-entropy is a sort of measure for the distance from one probability distribution to another.
+- local:img-1794828682403-5c6796e7e2ca19a2
+- Categorical Cross Entropy
+- local:img-1794828698165-5d687ab5e3f5ab8c
 ###### Back propogation
-###### local:img-1794828970095-b59583863d822565
+- local:img-1794828970095-b59583863d822565
 ###### Parameter Update
-###### Complexity of the model depends on no. of parameters and it's training , which is controlled by the change in weights and bias combined called as parameters .
-###### Issues
-###### VAnishing gradient
-###### ● As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.
+- Complexity of the model depends on no. of parameters and it's training , which is controlled by the change in weights and bias combined called as parameters .
+- Issues
+- VAnishing gradient
+- ● As we add more and more hidden layers, backpropagation becomes less and less useful in passing information to the lower layers.
 ● In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.
 ##### Epoch
 ###### One complete pass of the entire dataset through the neural network
@@ -718,15 +718,15 @@ f(x)=max(0,x)
 ##### Leaky ReLU
 ###### f(x) = max(0.01x, x). Attempt to fix the dying ReLU problem; the "leak" (α ≈ 0.01) gives negative inputs a small slope.
 ###### pros
-###### No dead ReLU problem. Parametric ReLU: f(x) = max(αx, x), where α is learned by backpropagation
+- No dead ReLU problem. Parametric ReLU: f(x) = max(αx, x), where α is learned by backpropagation
 ###### cons
-###### Not proven to be always better than ReLU.
+- Not proven to be always better than ReLU.
 ##### ELU
 ###### f(x) = x for x ≥ 0; α(eˣ − 1) for x < 0. Same as ReLU for non-negative inputs, but for negative inputs it smooths slowly towards −α instead of cutting off sharply
 ###### Pros
-###### Strong alternative to ReLU. Can produce negative outputs
+- Strong alternative to ReLU. Can produce negative outputs
 ###### cons
-###### For x > 0 it can blow up the activation (range [0, ∞))
+- For x > 0 it can blow up the activation (range [0, ∞))
 ##### Softmax
 ###### It is used when output is categorical
 it calculates the probability of target class over all target classes
@@ -734,21 +734,21 @@ softmax(z_i)={exp(z_i)}/{\sum_j exp(z_j)}
 ###### local:img-1794841668296-b41c286d4d3fba9c
 ###### local:img-1794841442336-840ad28b58f946a9
 ###### pros
-###### mimics one-hot labels; exponential avoids the information loss of absolute values.
+- mimics one-hot labels; exponential avoids the information loss of absolute values.
 ###### cons
-###### Not for multi-label (use sigmoid) or regression.
+- Not for multi-label (use sigmoid) or regression.
 ##### Swish
 ###### Inspired by sigmoid gating in LSTMs and highway networks. Uses the same value for gating (self-gating)
 ###### Pros
-###### No dying ReLU. Accuracy increase over ReLU.
+- No dying ReLU. Accuracy increase over ReLU.
 ###### cons
-###### Slightly more computationally expensive. More issues may appear over time.
+- Slightly more computationally expensive. More issues may appear over time.
 ###### local:img-1794841448935-e15f3e359950da63
 ##### Maxout
 ###### Generalization of ReLU and LeakyReLU ,it’s a learnable activation function.
 max(w₁ᵀx + b₁, w₂ᵀx + b₂)
 ###### cons
-###### Doubles the number of parameters per neuron, so more parameters to train.
+- Doubles the number of parameters per neuron, so more parameters to train.
 ##### Softplus
 ###### smoother version of ReLU
 f(x)=ln(1+exp x) , unilateral suppression like ReLU. Range (0, +∞).
